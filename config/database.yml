@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: lost_tribes2_dev
+  pool: 5
+  username: michaelreinhart
+  host: localhost
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: lost_tribes2_test
+  pool: 5
+  username: michaelreinhart
+  host: localhost
+  password:
