@@ -7,7 +7,6 @@ describe UsersController do
       user2 = create(:user2)
       get :index
       assigns(:users).should eq [@user1, user2]
-
     end
   end
 end
