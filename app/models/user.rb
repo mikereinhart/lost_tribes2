@@ -11,6 +11,28 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   validates :zip, presence: true, length: { :is => 5 } 
+  validate :vendor_address # or validate? 
+
+  def vendor_address
+    if self.vendor? && self.street_address.nil?
+      self.errors.add(:street_address, 'Street Address is required for vendors.')
+    end
+
+    if self.vendor? && self.city.nil?
+      self.errors.add(:city, 'City is a required field for vendors.')
+    end 
+
+    if self.vendor? && self.state.nil?
+      self.errors.add(:state, 'State is a required field.')
+    end
+
+    if self.vendor? && self.phone_number.nil?
+      self.errors.add(:phone_number, "Phone number is a required field.")
+    end
+
+
+  end
+
 
   has_and_belongs_to_many :events
 end
