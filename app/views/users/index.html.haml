@@ -22,23 +22,6 @@
       %th
         Zip Code
   %tbody
-    - @users.each do |user|
-      %tr
-        %td
-          = user.name
-        %td
-          = user.email
-        %td
-          = user.password
-        %td
-          = user.phone_number
-        %td
-          = user.street_address
-        %td
-          = user.street_address_2
-        %td
-          = user.city
-        %td
-          = user.state
-        %td
-          = user.zip
+    = render partial: 'users/partials/users'
+
+= javascript_include_tag 'users' 
