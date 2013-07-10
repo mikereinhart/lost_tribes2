@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130709232524) do
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
+    t.integer  "creator_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.text     "description"
