@@ -29,10 +29,7 @@ class User < ActiveRecord::Base
     if self.vendor? && self.phone_number.nil?
       self.errors.add(:phone_number, "Phone number is a required field.")
     end
-
-
   end
-
 
   has_and_belongs_to_many :events
 end
