@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   :zip, :street_address, :street_address2, :city, :state, :phone_number, :vendor, :admin 
   # attr_accessible :title, :body
 
-  validates :zip, presence: true, length: { :is => 5 } 
+  validates :zip, presence: true
+  # , length: { :is => 5 } 
 
   has_and_belongs_to_many :events
 end
