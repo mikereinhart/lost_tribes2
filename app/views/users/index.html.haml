@@ -1,0 +1,44 @@
+%h1 Users
+
+%table
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Email
+      %th
+        Password
+      %th 
+        Phone Number
+      %th
+        Address
+      %th
+        Address 2
+      %th 
+        City
+      %th 
+        State
+      %th
+        Zip Code
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td
+          = user.name
+        %td
+          = user.email
+        %td
+          = user.password
+        %td
+          = user.phone_number
+        %td
+          = user.street_address
+        %td
+          = user.street_address_2
+        %td
+          = user.city
+        %td
+          = user.state
+        %td
+          = user.zip
