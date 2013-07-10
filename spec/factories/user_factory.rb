@@ -7,6 +7,7 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+ 
 
   factory :vendor, class: User do
     # id 2
@@ -21,5 +22,16 @@ FactoryGirl.define do
     password "wordpass"
     password_confirmation "wordpass"
   end
+
+
+  factory :invalid_user, class: User do
+    name nil
+    email nil
+  end
+  factory :updated_user, class: User do
+    name 'my updated name'
+    email 'my_updated@email.com'
+  end
+
 end
 

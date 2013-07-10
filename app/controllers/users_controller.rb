@@ -6,9 +6,11 @@ class UsersController < ApplicationController
 
   def create 
     @user = User.new(params[:user])
-    @user.save!
-
-    redirect_to '/'
+    if @user.save
+       redirect_to users_path
+    else
+      render :new
+    end
   end
 
   def new
@@ -21,15 +23,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params['id'])
-    if user.update_attributes(params['user'])
-      redirect_to users_path
+    if @user.update_attributes(params['user'])
+      redirect_to users_path(@user)
     else 
-      redirect_to vendors_path 
+      render :edit
     end
   end
 
   def destroy 
-    User.find(params[:id]).delete 
+    @user = User.find(params[:id])
+    @user.delete 
     redirect_to users_path
   end
 
