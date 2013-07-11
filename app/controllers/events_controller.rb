@@ -46,8 +46,8 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    Event.find(params[:id]).delete
-    redirect_to events_path
+    Event.find(params[:id]).destroy
+    # render json: event
   end
 
 end 
