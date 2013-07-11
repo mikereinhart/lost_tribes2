@@ -84,14 +84,30 @@ describe EventsController do
     context 'valid attributes' do
       let(:updated_event) {build(:updated_event)}
       it 'assigns the given event to an instance variable' do
-        put :update, id: event, event: attributes_for(:event1)
-          assigns(:updated_event1).should eq :event1
+        put :update, id: event, event: attributes_for(:updated_event)
+        updated_event.should eq updated_event
+      end
+      it 'changes the attributes of the event' do
+        original_title = event.title
+        put :update, id: event, event: attributes_for(:updated_event)
 
+        event.reload
+
+        event.title.should eq updated_event.title
+        event.title.should_not eq original_title
+      end
+      it "redirects to the event page" do
+        put :update, id: event, event: attributes_for(:updated_event)
+        response.should redirect_to events_path
       end
     end
-    
+    context 'invalid attributes' do
+        it 'assigns the given event to an instance variable do' do
+          put :update, id: event, event: attributes_for(:invalid_event)
+          assigns(:event).should eq event
+        end
+      end
   end
-
 
 
 
