@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @user = User.new
+
   end
 
   def create 
@@ -22,8 +24,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params['id'])
-    if user.update_attributes(params['user'])
+    @user = User.find(params['id'])
+    if @user.update_attributes(params['user'])
       redirect_to users_path(@user)
     else 
       render :edit
@@ -31,9 +33,9 @@ class UsersController < ApplicationController
   end
 
   def destroy 
-    user = User.find(params[:id])
-    user.destroy  
-    render json: user
+    @user = User.find(params[:id])
+    @user.destroy  
+    render json: @user
   end
 
 

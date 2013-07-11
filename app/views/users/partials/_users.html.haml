@@ -1,26 +1,26 @@
 - @users.each do |user|
   %tr{:'data-user-id' => user.id}
-    %td
+    %td#user_name
       = user.name
-    %td 
+    %td#user_vendor
       = user.vendor 
-    %td
+    %td#user_admin
       = user.admin 
-    %td
+    %td#user_email
       = user.email
-    %td
+    %td#user_password
       = user.password
-    %td
+    %td#user_phone_number
       = user.phone_number
-    %td
+    %td#user_street_address
       = user.street_address
-    %td
+    %td#user_street_address_2
       = user.street_address_2
-    %td
+    %td#user_city
       = user.city
-    %td
+    %td#user_state
       = user.state
-    %td
+    %td#user_zip
       = user.zip
 
       = link_to 'Delete', '#', class: 'button delete-button small alert' 
