@@ -1,6 +1,6 @@
 New Event Page
 
-= form_for @event do |f|
+= form_for @event, remote: true do |f|
   = f.label :title
   = f.text_field :title
   %br

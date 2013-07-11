@@ -14,9 +14,10 @@ class EventsController < ApplicationController
 # end
 
   def create
-    event = Event.new(params[:event])
-    event.save!
-    render json: {event: event}
+    # binding.pry
+    @event = Event.new(params[:event])
+    @event.save!
+    render json: {event: @event}
 
     # if @event.save
     #   redirect_to events_path
