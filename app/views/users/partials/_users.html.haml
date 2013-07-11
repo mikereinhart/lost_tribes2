@@ -1,5 +1,5 @@
 - @users.each do |user|
-  %tr
+  %tr{:'data-user-id' => user.id}
     %td
       = user.name
     %td
@@ -18,3 +18,6 @@
       = user.state
     %td
       = user.zip
+
+      = link_to 'Delete', '#', class: 'button delete-button small alert' 
+      = link_to 'Edit', '#', class: 'button edit-button small' 
