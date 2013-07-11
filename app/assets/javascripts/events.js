@@ -4,7 +4,7 @@ function delete_event(e){
   console.log('Entered function delete_task');
 
   var event_row = $(this).parent().parent();
-  var id_of_event = event_row.data('event_id');
+  var id_of_event = event_row.data('event-id');
 
   $.ajax({
     type: 'DELETE',
