@@ -15,15 +15,19 @@ class EventsController < ApplicationController
 
   def create
     # binding.pry
+    # @events = Event.all
     @event = Event.new(params[:event])
-    @event.save!
-    render json: {event: @event}
+    # @event.save!
+    # render json: {event: @event}
 
-    # if @event.save
-    #   redirect_to events_path
-    # else
-    #   redirect_to new_event_path
-    # end
+    if @event.save
+      @events = Event.all
+      respond_to do |format|
+        format.js 
+      end
+    else
+      render :new
+    end
   end
 
    def new

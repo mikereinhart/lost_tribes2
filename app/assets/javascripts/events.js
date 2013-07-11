@@ -21,7 +21,7 @@ function delete_event(e){
   return $(this);
 }
 
-function create_event(e){
+// function create_event(e){
 //   e.preventDefault();
 
 //   console.log('entered create event function');
@@ -44,7 +44,7 @@ function create_event(e){
 
 //   $('#events tbody').append(an_event);
 //   console.log('make it all the way thru!');
-}
+// }
 
 
 
