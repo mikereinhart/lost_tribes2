@@ -1,0 +1,23 @@
+- @users.each do |user|
+  %tr{:'data-user-id' => user.id}
+    %td
+      = user.name
+    %td
+      = user.email
+    %td
+      = user.password
+    %td
+      = user.phone_number
+    %td
+      = user.street_address
+    %td
+      = user.street_address_2
+    %td
+      = user.city
+    %td
+      = user.state
+    %td
+      = user.zip
+
+      = link_to 'Delete', '#', class: 'button delete-button small alert' 
+      = link_to 'Edit', '#', class: 'button edit-button small' 

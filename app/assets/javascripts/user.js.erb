@@ -1,0 +1,29 @@
+function delete_user(e){
+  console.log("delete on click is working!")
+  e.preventDefault(); 
+  console.log('Default Prevneted');
+
+  var user_row = $(this).parent().parent();
+  var id_of_user = user_row.data('user-id');
+
+  $.ajax({
+    type: 'DELETE',
+    url: 'users/'+id_of_user,
+
+    success: function(data){
+      
+      user_row.animate({
+        backgroundColor: 'red'
+      }, 300, function(){
+        $(this).fadeOut(300);
+      }); 
+
+      }
+    });
+  return $(this); }
+
+$(function(){
+
+
+$('tbody').on('click', '.delete-button', delete_user)
+});
