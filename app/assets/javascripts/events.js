@@ -9,7 +9,13 @@ function delete_event(e){
     type: 'DELETE',
     url: id_of_event,
     success: function(data){
-      console.log('Success!');
+      // console.log('Success!');
+
+      event_row.animate({
+        backgroundColor: 'red'
+      }, 300, function(){
+        $(this).fadeOut(300);
+      });
     }
   });
   return $(this);
