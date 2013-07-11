@@ -14,18 +14,20 @@ class EventsController < ApplicationController
 # end
 
   def create
-    @event = Event.new(params[:event])
-    if @event.save
-      redirect_to events_path
-    else
-      redirect_to new_event_path
-    end
+    event = Event.new(params[:event])
+    event.save!
+    render json: {event: event}
+
+    # if @event.save
+    #   redirect_to events_path
+    # else
+    #   redirect_to new_event_path
+    # end
   end
 
    def new
     @event = Event.new
     @events = Event.all
-
   end
 
   def edit

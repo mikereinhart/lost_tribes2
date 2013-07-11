@@ -21,7 +21,27 @@ function delete_event(e){
   return $(this);
 }
 
+function create_event(e){
+  e.preventDefault();
 
+  console.log('entered create event function');
+  var params = {
+    an_event: {
+      title: $('#event-title').val(),
+      date: $('#event-date').val(),
+      street_address: $('#event-street-address').val(),
+      street_address_2: $('#event-street-address-2').val(),
+      city: $('#event-city').val(),
+      state: $('#event-state').val(),
+      zip: $('#event-zip').val(),
+      description: $('#event-description').val()
+    }
+  };
+
+  // $.post('/events/new', params, function(data) {
+  //   var an_event = $('<tr>').attr('event-id', data.event.id);
+  // });
+}
 
 
 
@@ -30,5 +50,7 @@ function delete_event(e){
 $(function(){
 
   $('tbody').on('click', '.event-delete', delete_event);
+
+  $('#submit').on('click', create_event);
 
 });
