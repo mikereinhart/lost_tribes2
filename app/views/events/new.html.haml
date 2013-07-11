@@ -45,13 +45,6 @@ New Event Page
       %th 
         State
   %tbody
-    - @events.each do |event|
-      %tr
-        %td
-          = event.title
-        %td
-          = event.date
-        %td
-          = event.city
-        %td
-          = event.state
+    = render partial: '/events/partials/events'
+
+= javascript_include_tag 'events'
