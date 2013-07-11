@@ -1,4 +1,3 @@
-
 function delete_event(e){
   e.preventDefault();
   console.log('Entered function delete_task');
@@ -24,6 +23,6 @@ function delete_event(e){
 
 $(function(){
 
-  $('tbody').on('click', '.delete-button', delete_event);
+  $('tbody').on('click', '.event-delete', delete_event);
 
 });
