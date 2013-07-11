@@ -9,6 +9,6 @@ Event.create(title: 'Beerfest', date: '2010-10-10 16:19:00 UTC', street_address:
 User.create(name: 'Mike', email: 'mike@test.com', password: 'mike', phone_number: '973-570-2263', street_address: '156 Whitney Ave', city: 'Pompton Lakes', state: 'NJ', zip: '17442')
 
 User.create(name: "mike", email: "mike@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
-User.create(name: "chris", email: "chris@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
+User.create(name: "chris",  email: "chris@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
 User.create(name: "ryan", email: "ryan@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
 User.create(name: "jon doe", email: "john@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')

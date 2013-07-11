@@ -18,11 +18,36 @@ function delete_user(e){
       }); 
       }
     });
-  return $(this); 
+  return $(this); }
+
+function update_user(e){
+  e.preventDefault();
+
+  var user_id = $(this).data('user-id'); 
+
+  var params = {
+    user: {
+      name:
+      email: 
+      phone:
+      street_address:
+      street_address2:
+      city:
+      state:
+      zip:
+      vendor:
+      admin:
+
+
+
+    }
+  }:
+
 }
 
 $(function(){
 
 
 $('tbody').on('click', '.delete-button', delete_user)
+$('#edit-submit').on('click', update_user); 
 });
