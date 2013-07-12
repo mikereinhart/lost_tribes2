@@ -14,7 +14,7 @@ LostTribes::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -44,9 +44,8 @@ LostTribes::Application.configure do
     :authentication => :plain,
     :address => 'smtp.mailgun.org',
     :port => 587, 
-    :user_name => 'postmaster@app16868040.mailgun.org',
-    :password => '3mfpske44388',
-    :authentication => 'plain',
+    :user_name => 'postmaster@dosheatest.mailgun.org',
+    :password => '6yi8z5nf0-99',
     :enable_starttls_auto => true
   }
 end
