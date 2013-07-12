@@ -1,0 +1,44 @@
+%h1
+  #{@user.name.capitalize}
+%br
+%h2 
+  Your Events:
+%br
+  %table#events
+    %thead
+      %tr
+        %th
+          Title
+        %th
+          Date
+        %th 
+          City
+        %th 
+          State
+    %tbody
+      - @user.events.each do |event|
+        %tr
+          %td
+            = event.title
+          %td
+            = event.date
+          %td
+            = event.city
+          %td
+            = event.state
+%h2
+  Your Info:
+Email: #{@user.email}
+%br
+Phone Number: #{@user.phone_number}
+%br
+Address: #{@user.street_address}
+%br
+Address 2: #{@user.street_address_2}
+%br
+City: #{@user.city}
+%br
+State: #{@user.state}
+%br
+Zip Code: #{@user.zip}
+%br

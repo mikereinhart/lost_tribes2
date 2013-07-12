@@ -26,6 +26,17 @@ FactoryGirl.define do
     updated_at Time.now
     description "very classy."
   end
+
+  factory :updated_event, class: Event do
+    title 'my updated Party'
+    date '8/8/14'
+    city "Queens"
+  end
+
+  factory :invalid_event, class: Event do
+    title nil
+    date nil
+  end
 end
 
 
