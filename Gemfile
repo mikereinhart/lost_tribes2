@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.2.13'
 
 #A terrific gem for turning  https://github.com/alexreisner/geocoder
 gem 'geocoder'
@@ -19,6 +19,9 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'foundation-icons-sass-rails'
+  gem 'skrollr-rails'
+  gem 'zurb-foundation', '~> 4.0.0'
+  gem "font-awesome-rails"
 end
 
 group :development, :test do
