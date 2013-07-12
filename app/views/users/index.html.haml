@@ -1,30 +1,46 @@
-%h1 Users
+= form_for @user do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :vendor
+  = f.text_field :vendor
+  = f.label :admin
+  = f.text_field :admin
+  = f.label :email
+  = f.text_field :email 
+  = f.label :password
+  = f.text_field :password
+  = f.label :phone_number 
+  = f.text_field :phone_number
+  = f.label :street_address 
+  = f.text_field :street_address
+  = f.label :street_address_2 
+  = f.text_field :street_address_2
+  = f.label :city 
+  = f.text_field :city 
+  = f.label :state
+  = f.text_field :state 
+  = f.label :zip
+  = f.text_field :zip
+  = f.submit id: 'submit', class: 'button success small'
+  = f.submit id: 'update-submit', class: 'button success small hidden', value: 'Update User'
+
 
 %table
   %thead
     %tr
-      %th
-        Name
-      %th
-        Vendor
-      %th
-        Admin 
-      %th
-        Email
-      %th
-        Password
-      %th 
-        Phone Number
-      %th
-        Address
-      %th
-        Address 2
-      %th 
-        City
-      %th 
-        State
-      %th
-        Zip Code
+      %th Name
+      %th Vendor
+      %th Admin 
+      %th Email
+      %th Password
+      %th Phone Number
+      %th Street Address
+      %th Street Address 2
+      %th City
+      %th State
+      %th Zip 
+      %th Delete
+      %th Edit
   %tbody
     = render partial: 'users/partials/users'
 
