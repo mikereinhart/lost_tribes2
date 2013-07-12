@@ -6,4 +6,7 @@
 //= require skrollr.min
 //= require ui-extra
 //= require_self
+//= zepto.js
+//= requirefoundation.topbar.js
+//= require skrollr.min
 //

@@ -1,6 +1,5 @@
 - @events.each do |event|
   %tr{:'data-event-id' => event.id}
-<<<<<<< HEAD
     %td
       = event.title
     %td
@@ -8,7 +7,6 @@
     %td
       = event.city
     %td
-=======
     %td.title
       = link_to event.title, event_path(event)
     %td.date
@@ -16,7 +14,6 @@
     %td.city
       = event.city
     %td.state
->>>>>>> ab9a2d0a3c772115a79b3e229976a7e0d706f9dd
       = event.state
     %td
       = link_to 'Delete', '#', class: 'event-delete'
