@@ -1,5 +1,5 @@
 function delete_user(e){
-  e.preventDefault(); 
+  e.preventDefault();
 
   var user_row = $(this).parent().parent();
   var id_of_user = user_row.data('user-id');

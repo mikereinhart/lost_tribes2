@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require vendor/custom.modernizr
 //= require foundation
-//= require skrollr.min.js
+//= require skrollr.min
+//= require ui-extra
 //= require_self
 //
