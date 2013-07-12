@@ -54,7 +54,7 @@ module LostTribes
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true #NEVER SET ME TO FALSE
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

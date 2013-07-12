@@ -26,6 +26,7 @@ New Event Page
   = f.text_field :description
   %br
   = f.submit id: 'submit'
+  = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
 
 %br
 %br
@@ -45,6 +46,20 @@ New Event Page
       %th 
         State
   %tbody
-    = render partial: '/events/partials/events'
+    / = render partial: '/events/partials/events'
+    - @events.each do |event|
+      %tr{:'data-event-id' => event.id}
+        %td.title
+          = link_to event.title, event_path(event)
+        %td.date
+          = event.date
+        %td.city
+          = event.city
+        %td.state
+          = event.state
+        %td
+          = link_to 'Delete', '#', class: 'event-delete'
+          = link_to 'Edit', '#', class: 'event-edit'
+
 
 = javascript_include_tag 'events'
