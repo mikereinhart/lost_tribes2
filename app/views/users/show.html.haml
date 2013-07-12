@@ -1,0 +1,37 @@
+
+%h1
+  #{@user.name}
+%br
+#{@user.email}
+%br
+#{@user.phone_number}
+%br
+#{@user.street_address}
+%br
+#{@user.street_address_2}
+%br
+#{@user.city}
+%br
+#{@user.state}
+%br
+#{@user.zip}
+%br
+
+
+
+
+
+
+
+
+
+
+/ <h1><%= @friend['name'] %> </h1>
+/ <img src="<%= @friend['image_url'] %>" >
+/ <ul>
+/   <li><%= @friend['age'] %> </li>
+/   <li><%= @friend['gender'] %> </li>
+/   <li><a href="<%=@friend['twitter_url']%>">Twitter</a></li>
+/   <li><a href="<%=@friend['github_url']%>">GitHub</a></li>
+/   <li><a href="<%=@friend['facebook_url']%>">Facebook</a></li>
+/ </ul>
