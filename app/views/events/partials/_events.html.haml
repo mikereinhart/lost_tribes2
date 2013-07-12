@@ -1,13 +1,13 @@
-/ - @events.each do |event|
-/   %tr{:'data-event-id' => event.id}
-/     %td
-/       = event.title
-/     %td
-/       = event.date
-/     %td
-/       = event.city
-/     %td
-/       = event.state
-/     %td
-/       = link_to 'Delete', '#', class: 'event-delete'
-/       = link_to 'Edit', '#', class: 'event-edit'
+- @events.each do |event|
+  %tr{:'data-event-id' => event.id}
+    %td
+      = event.title
+    %td
+      = event.date
+    %td
+      = event.city
+    %td
+      = event.state
+    %td
+      = link_to 'Delete', '#', class: 'event-delete'
+      = link_to 'Edit', '#', class: 'event-edit'

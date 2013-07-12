@@ -40,23 +40,38 @@ New Event Page
       %th
         Title
       %th
+        date
+      %th
+        street
+      %th
+        street 2
+      %th
         Date
       %th 
         City
       %th 
         State
   %tbody
-    / = render partial: '/events/partials/events'
+   
     - @events.each do |event|
       %tr{:'data-event-id' => event.id}
         %td.title
           = link_to event.title, event_path(event)
         %td.date
           = event.date
+        %td.street_address
+          = event.street_address
+        %td.street_address_2
+          = event.street_address2
         %td.city
           = event.city
         %td.state
           = event.state
+        %td.zip
+          = event.zip_code
+        %td.description
+          = event.description
+
         %td
           = link_to 'Delete', '#', class: 'event-delete'
           = link_to 'Edit', '#', class: 'event-edit'
