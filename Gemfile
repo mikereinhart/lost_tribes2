@@ -19,7 +19,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'foundation-icons-sass-rails'
-  gem 'skrollr-rails'
   gem 'zurb-foundation', '~> 4.0.0'
   gem "font-awesome-rails"
 end

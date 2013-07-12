@@ -3,5 +3,7 @@
 //= require jquery_ujs
 //= require vendor/custom.modernizr
 //= require "foundation"
-//= require skrollr
+//= zepto.js
+//= requirefoundation.topbar.js
+//= require skrollr.min
 //
