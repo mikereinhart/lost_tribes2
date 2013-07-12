@@ -55,6 +55,7 @@ module LostTribes
 
     # Enable the asset pipeline
     config.assets.enabled = true #NEVER SET ME TO FALSE
+    config.assets.initialize_on_precompile = false #We added this to prevent our local from precompiling and leave that to Heroku
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
