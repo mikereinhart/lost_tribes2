@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20130712141810) do
     t.boolean  "vendor"
     t.string   "confirmation_token"
     t.string   "unconfirmed_email"
-    t.string   "confirmed_at"
-    t.string   "confirmation_sent_at"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
