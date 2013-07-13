@@ -31,8 +31,8 @@ class EventsController < ApplicationController
   end
 
    def new
-    @event = Event.new
     @events = Event.all
+    @event = Event.new
   end
 
   def edit
@@ -44,11 +44,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    event = Event.find(params[:id])
-    if event.update_attributes(params[:event])
-      redirect_to events_path
+    @event = Event.find(params[:id])
+    if @event.update_attributes(params[:event])
+      redirect_to event_path(@event)
     else
-      redirect_to edit_events_path 
+      render :edit
+      # redirect_to edit_events_path 
     end
   end
   

@@ -64,7 +64,6 @@ function populate_form(e){
 }
 
 function update_user(e){
-  console.log("we are in update user")
   e.preventDefault();
   console.log("inside updated user")
 
