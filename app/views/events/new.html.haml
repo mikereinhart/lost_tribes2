@@ -27,6 +27,7 @@ New Event Page
   %br
   = f.submit id: 'submit'
   = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
+  = f.submit id: 'event-update-submit', class: 'button success small hidden', value: 'Update User'
 
 %br
 %br
@@ -54,21 +55,21 @@ New Event Page
   %tbody
     - @events.each do |event|
       %tr{:'data-event-id' => event.id}
-        %td.title
+        %td.event_title
           = link_to event.title, event_path(event)
-        %td.date
+        %td.event_date
           = event.date
-        %td.street_address
+        %td.event_address
           = event.street_address
-        %td.street_address_2
+        %td.event_address_2
           = event.street_address2
-        %td.city
+        %td.event_city
           = event.city
-        %td.state
+        %td.event_state
           = event.state
-        %td.zip
+        %td.event_zip
           = event.zip_code
-        %td.description
+        %td.event_description
           = event.description
 
         %td
