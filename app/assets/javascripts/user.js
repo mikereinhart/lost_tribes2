@@ -130,6 +130,10 @@ function update_user(e){
   // corresponding_row.children('.user_name').text('Josh')
 }
 
+function admin(){
+  
+}
+
 
 $(function(){
 

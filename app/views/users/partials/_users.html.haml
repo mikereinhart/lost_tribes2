@@ -1,11 +1,18 @@
-- @users.each do |user|
-  %tr{:'data-user-id' => user.id}
+- @users.each do |user| 
+  - if user.admin?
+    %tr{:'data-user-id' => user.id, class: 'admin highlighted'}
+  - elsif user.vendor?
+    %tr{:'data-user-id' => user.id, class: 'vendor highlighted'}
+  - else 
+    %tr{:'data-user-id' => user.id}
+
+
     %td.user_name
       = user.name
-    %td.user_vendor
-      = user.vendor 
-    %td.user_admin
-      = user.admin 
+    / %td.user_vendor
+    /   = user.vendor 
+    / %td.user_admin
+    /   = user.admin 
     %td.user_email
       = user.email
     %td.user_password
