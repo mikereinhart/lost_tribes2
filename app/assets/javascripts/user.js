@@ -107,8 +107,6 @@ function update_user(e){
     dataType: 'script'
   });
 
-
-
   var corresponding_row = $('tr[data-user-id='+ user_id+']')
   corresponding_row.children('.user_name').text(params.user.name)
   corresponding_row.children('.user_vendor').text(params.user.vendor)
@@ -121,25 +119,46 @@ function update_user(e){
   corresponding_row.children('.user_state').text(params.user.state)
   corresponding_row.children('.user_zip').text(params.user.zip)
   
-
-
-
-
-
   console.log("params.user.name ---> " + params.user.name)
   // corresponding_row.children('.user_name').text('Josh')
 }
 
-function admin(){
-  
+function filter_vendor(){
+  console.log('in filter admin')
+  $('.vendor_row').show(1000)
+  $('.admin_row').hide(1000)
+  $('.user_row').hide(1000)
 }
+function filter_admin(){
+  $('.admin_row').show(1000)
+  $('.vendor_row').hide(1000)
+  $('.user_row').hide(1000)
+}
+function filter_user(){
+  $('.admin_row').hide(1000)
+  $('.vendor_row').hide(1000)
+  $('.user_row').show(1000)
 
+}
+function filter_all(){
+  $('.admin_row').show(1000)
+  $('.vendor_row').show(1000)
+  $('.user_row').show(1000)
+
+
+}
 
 $(function(){
 
 $('tbody').on('click', '.delete-button', delete_user); 
 $('tbody').on('click', '.edit-button', populate_form);
 $('#update-submit').on('click', update_user); 
+$('.filter_vendor').on('click', filter_vendor)
+$('.filter_admin').on('click', filter_admin)
+$('.filter_user').on('click', filter_user)
+$('.filter_all').on('click', filter_all)
+
+
 
 });
 
