@@ -35,13 +35,9 @@
 
     / ===================================================================
   .large-8.columns
-    - if current_user && !current_user.vendor?
-      %br
-      %br
-      %br
-      .event-display
-      %button.hidden.small#add-to-user 
-        =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
+    %br
+    %br
+    %br
     %br
     %br
     %br
@@ -95,6 +91,10 @@
               %td
                 = link_to 'Delete', '#', class: 'event-delete'
                 = link_to 'Edit', '#', class: 'event-edit'
+    - if current_user && !current_user.vendor?
+      .event-display
+      %button.hidden.small#add-to-user 
+        =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
 
 
     = javascript_include_tag 'events'
