@@ -7,9 +7,13 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    = render partial: 'layouts/partials/nav'
+    %br
+    %br
     %p.notice= notice
     %p.alert= alert
     = yield
+
     :javascript
       skrollr.init();
 
