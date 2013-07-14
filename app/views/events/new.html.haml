@@ -1,93 +1,86 @@
-%h1 Events
-
-- if current_user && current_user.vendor?
-  = form_for @event, remote: true do |f|
-    = f.label :title
-    = f.text_field :title
+.row
+  .large-12.columns
+    %h1 Events
+    - if current_user && current_user.vendor?
+      = form_for @event, remote: true do |f|
+        = f.label :title
+        = f.text_field :title
+        %br
+        = f.label :date
+        = f.text_field :date
+        %br
+        = f.label :street_address
+        = f.text_field :street_address
+        %br
+        = f.label :street_address2
+        = f.text_field :street_address2
+        %br
+        = f.label :city
+        = f.text_field :city
+        %br
+        = f.label :state
+        = f.text_field :state
+        %br
+        = f.label :zip_code
+        = f.text_field :zip_code
+        %br
+        = f.label :description
+        = f.text_field :description
+        %br
+        = f.submit id: 'submit'
+        = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
+        = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
+    / ===================================================================
+    - if current_user && !current_user.vendor?
+      %h3 Click an event title to view details and register!
+      .event-display
+      %button.hidden.small#add-to-user Register
     %br
-    = f.label :date
-    = f.text_field :date
     %br
-    = f.label :street_address
-    = f.text_field :street_address
     %br
-    = f.label :street_address2
-    = f.text_field :street_address2
-    %br
-    = f.label :city
-    = f.text_field :city
-    %br
-    = f.label :state
-    = f.text_field :state
-    %br
-    = f.label :zip_code
-    = f.text_field :zip_code
-    %br
-    = f.label :description
-    = f.text_field :description
-    %br
-    = f.submit id: 'submit'
-    = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
-    = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
-
-/ ===================================================================
-
-- if current_user && !current_user.vendor?
-
-  %h3 Click an event title to view details and register!
-  .event-display
-  %button.hidden.small#add-to-user Register
-
-
-
-
-
-%br
-%br
-%br
-
-=link_to "CSV | ", events_path(format: "csv") 
-=link_to "Excel", events_path(format: "xls") 
-%table#events
-  %thead
-    %tr
-      %th
-        Title
-      %th
-        date
-      %th
-        street
-      %th
-        street 2
-      %th
-        Date
-      %th 
-        City
-      %th 
-        State
-  %tbody
-    - @events.each do |event|
-      %tr{:'data-event-id' => event.id}
-        %td.event_title
-          = link_to event.title, event_path(event)
-        %td.event_date
-          = event.date
-        %td.event_address
-          = event.street_address
-        %td.event_address_2
-          = event.street_address2
-        %td.event_city
-          = event.city
-        %td.event_state
-          = event.state
-        %td.event_zip
-          = event.zip_code
-        %td.event_description
-          = event.description
-
-        %td
-          = link_to 'Delete', '#', class: 'event-delete'
-          = link_to 'Edit', '#', class: 'event-edit'
+    Download to: 
+    =link_to "CSV | ", events_path(format: "csv") 
+    =link_to "Excel", events_path(format: "xls") 
+    %table#events
+      %thead
+        %tr
+          %th
+            Title
+          %th
+            date
+          %th
+            street
+          %th
+            street 2
+          %th
+            Date
+          %th 
+            City
+          %th 
+            State
+      %tbody
+        - @events.each do |event|
+          %tr{:'data-event-id' => event.id}
+            %td.event_title
+              = link_to event.title, event_path(event)
+            %td.event_date
+              = event.date
+            %td.event_address
+              = event.street_address
+            %td.event_address_2
+              = event.street_address2
+            %td.event_city
+              = event.city
+            %td.event_state
+              = event.state
+            %td.event_zip
+              = event.zip_code
+            %td.event_description
+              = event.description
+            %td
+              - if user_signed_in? &&  
+                = link_to 'Delete', '#', class: 'event-delete'
+                = link_to 'Edit', '#', class: 'event-edit'
 
 
-= javascript_include_tag 'events'
+    = javascript_include_tag 'events'
