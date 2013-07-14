@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712141810) do
+ActiveRecord::Schema.define(:version => 20130714164405) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130712141810) do
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
+    t.integer  "creator_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.text     "description"
@@ -32,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20130712141810) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -42,8 +43,8 @@ ActiveRecord::Schema.define(:version => 20130712141810) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "name"
     t.integer  "zip"
     t.string   "street_address"
@@ -51,12 +52,12 @@ ActiveRecord::Schema.define(:version => 20130712141810) do
     t.string   "city"
     t.string   "state"
     t.string   "phone_number"
-    t.boolean  "admin"
     t.boolean  "vendor"
     t.string   "confirmation_token"
     t.string   "unconfirmed_email"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "admin",                  :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

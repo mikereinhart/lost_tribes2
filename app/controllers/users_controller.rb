@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @users = User.all
     @user = User.new
@@ -11,9 +10,6 @@ class UsersController < ApplicationController
       format.xls { send_data @customers.to_csv(col_sep: "\t") }
     end
   end
-
-
-
 
   def create 
     @user = User.new(params[:user])
