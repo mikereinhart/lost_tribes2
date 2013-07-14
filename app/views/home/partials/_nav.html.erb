@@ -14,7 +14,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% if current_user %>
-        <li class="active"><a href="/users/#(current_user.id}">My Page</a></li>
+        <li class="active"><%= link_to "My Page", user_path(current_user) %></li>
       <% end %>
       <li class="divider hide-for-small"></li>
       <li class="active"><a href="#brews">Brew</a></li>
