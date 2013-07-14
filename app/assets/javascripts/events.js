@@ -132,8 +132,6 @@ function display_event(e){
   // when clicked, that button performs a PUT request which performs (current_user.events << selected_event)
   // the selected event can be found by its ID
   // when clicked, the button dissappears and instead a box says '#{event.title} was added to your events!'
-  
-
 
   // var button = document.createElement('input');
   // button.setAttribute('type', 'button');
