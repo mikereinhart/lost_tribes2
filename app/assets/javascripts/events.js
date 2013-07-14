@@ -59,9 +59,9 @@ function populate_form(e){
   $('#add-submit').removeClass('hidden');
   $('#add-submit').attr('data-event-id', event_id);
 
-  var event_id = event_row.data('event-id')
-  $('#event-update-submit').attr('data-event-id', event_id)
-  console.log("event_id " + event_id)
+  var event_id = event_row.data('event-id');
+  $('#event-update-submit').attr('data-event-id', event_id);
+  console.log("event_id " + event_id);
 }
 
 function update_event(e) {
@@ -84,7 +84,7 @@ function update_event(e) {
       description: $('#event_description').val()
     }
   };
-
+  
 
 $.ajax({
   type: 'PUT',
@@ -96,15 +96,15 @@ $.ajax({
 
 
 var corresponding_row = $('tr[data-event-id='+event_id+']');
-console.log('corresponding_row '+ corresponding_row)
-corresponding_row.children('.event_title').text(params.event.title)
-corresponding_row.children('.event_date').text(params.event.date)
-corresponding_row.children('.event_address').text(params.event.street)
-corresponding_row.children('.event_address_2').text(params.event.street2)
-corresponding_row.children('.event_city').text(params.event.city)
-corresponding_row.children('.event_state').text(params.event.state)
-corresponding_row.children('.event_zip').text(params.event.zip)
-corresponding_row.children('.event_description').text(params.event.description)
+console.log('corresponding_row '+ corresponding_row);
+corresponding_row.children('.event_title').text(params.event.title);
+corresponding_row.children('.event_date').text(params.event.date);
+corresponding_row.children('.event_address').text(params.event.street);
+corresponding_row.children('.event_address_2').text(params.event.street2);
+corresponding_row.children('.event_city').text(params.event.city);
+corresponding_row.children('.event_state').text(params.event.state);
+corresponding_row.children('.event_zip').text(params.event.zip);
+corresponding_row.children('.event_description').text(params.event.description);
 
 
 
