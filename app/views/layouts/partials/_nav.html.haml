@@ -1,12 +1,54 @@
 %div.fixed
-  %nav.top-bar
-    %ul.title-area 
-      %h3 
-      %a{:href => "/"} Lost Tribes Brew
-    %ul.left 
-    %ul.right
-      %li.active
-        - if current_user
-          %a{:href => "/users/#{current_user.id}"} My Page
-        %a{:href => "/events/new"} Events
-        %a{:href => "/users"} Users
+  .contain-to-grid.sticky
+    %nav#top1.top-bar
+      %ul.title-area
+        / Title Area
+        %li.name
+          %h1
+            %a{:href => "/"} Lost Tribes Brew
+        / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+        %li.toggle-topbar.menu-icon
+          %a{:href => "#"}
+            %span Menu
+      %section.top-bar-section
+        / Right Nav Section
+        %ul.right
+          %li.divider.hide-for-small
+          - if current_user
+            %li.active= link_to "My Page", user_path(current_user)
+          %li.active
+            %a{:href => "#brews"} Brew
+          %li.active
+            %a{:href => "#vendors"} Vendors
+          %li.has-dropdown
+            %a{:href => "#"}
+              %i.icon-cogs
+            %ul.dropdown
+              %li
+                %label Customers & Vendors
+              %li.has-dropdown
+                %a{:href => "#brews"}
+                  Our Brew
+                  %i.icon-beer
+              %li
+                %a{:href => "#vendors"}
+                  Vendors Map
+                  %i.icon-map-marker
+              %li
+                %a{:href => "#events"}
+                  Events
+                  %i.icon-calendar
+              %li
+                %a{:href => "mailto:info@LostTribesBrew.com"}
+                  Email
+                  %i.icon-envelope-alt
+              %li.divider
+              %li
+                %label
+                  Admin
+                  %i.icon-user
+              - unless current_user
+                %li= link_to 'Login', new_user_session_path, method: :get
+              - else
+                %li= link_to 'Logout', destroy_user_session_path, method: :delete
+              %li.divider

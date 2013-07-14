@@ -1,0 +1,12 @@
+%div.fixed
+  %nav.top-bar
+    %ul.title-area 
+      %h3 
+      %a{:href => "/"} Lost Tribes Brew
+    %ul.left 
+    %ul.right
+      %li.active
+        - if current_user
+          %a{:href => "/users/#{current_user.id}"} My Page
+        %a{:href => "/events/new"} Events
+        %a{:href => "/users"} Users
