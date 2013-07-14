@@ -27,9 +27,9 @@
         = f.label :description
         = f.text_field :description
         %br
-        = f.submit id: 'submit'
+        = f.submit id: 'submit', class: 'button success small'
         = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
-        = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
+        = f.submit id: 'event-update-submit', class: 'button success small hidden', value: 'Update Event'
         %br
         %br
 
@@ -69,28 +69,7 @@
             %th
               Options
       %tbody
-        - @events.each do |event|
-          %tr{:'data-event-id' => event.id}
-            %td.event_title
-              = link_to event.title, event_path(event)
-            %td.event_date
-              = event.date
-            %td.event_address.hidden
-              = event.street_address
-            %td.event_address_2.hidden
-              = event.street_address2
-            %td.event_city
-              = event.city
-            %td.event_state
-              = event.state
-            %td.event_zip.hidden
-              = event.zip_code
-            %td.event_description.hidden
-              = event.description
-            - if user_signed_in? && current_user.admin?
-              %td
-                = link_to 'Delete', '#', class: 'event-delete'
-                = link_to 'Edit', '#', class: 'event-edit'
+        = render partial: '/events/partials/events'
     - if current_user && !current_user.vendor?
       .event-display
       %button.hidden.small#add-to-user 
