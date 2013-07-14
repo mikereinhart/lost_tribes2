@@ -57,20 +57,21 @@
             Title
           %th
             Date
-          %th
+          %th.hidden
             Street
-          %th
+          %th.hidden
             Address 2
           %th
             City
-          %th 
+          %th
             State
-          %th 
+          %th.hidden 
             Zip Code
-          %th
+          %th.hidden
             Details
-          %th
-            Options
+          - if user_signed_in? && current_user.admin?  
+            %th
+              Options
       %tbody
         - @events.each do |event|
           %tr{:'data-event-id' => event.id}
@@ -78,20 +79,20 @@
               = link_to event.title, event_path(event)
             %td.event_date
               = event.date
-            %td.event_address
+            %td.event_address.hidden
               = event.street_address
-            %td.event_address_2
+            %td.event_address_2.hidden
               = event.street_address2
             %td.event_city
               = event.city
             %td.event_state
               = event.state
-            %td.event_zip
+            %td.event_zip.hidden
               = event.zip_code
-            %td.event_description
+            %td.event_description.hidden
               = event.description
-            %td
-              - if user_signed_in?
+            - if user_signed_in? && current_user.admin?
+              %td
                 = link_to 'Delete', '#', class: 'event-delete'
                 = link_to 'Edit', '#', class: 'event-edit'
 
