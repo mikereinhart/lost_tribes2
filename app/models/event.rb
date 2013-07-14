@@ -12,4 +12,6 @@ class Event < ActiveRecord::Base
   validates :street_address, presence: true
   validates :title, presence: true
   validates :zip_code, presence: true
+
 end
+
