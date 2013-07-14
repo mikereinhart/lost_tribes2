@@ -1,10 +1,4 @@
 
-body {
-   height: auto !important; 
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E8811A', endColorstr='#80320B'); /* for IE */
-  background: -webkit-gradient(linear, left top, left bottom, from(#E8811A), to(#80320B)); /* for webkit browsers */
-  background: -moz-linear-gradient(top,  #E8811A,  #80320B); /* for firefox 3.6+ */
-}
 
 nav#top1.top-bar {  margin-bottom: 0px; }
 
@@ -87,19 +81,38 @@ display: inline;
 #map img {
  max-width: none;
 }
-/*
+
 #bg1, #bg2, #bg3 {
   z-index:50;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  background:url(images/bubbles.png) repeat 0 0;
-}*/
+  background: url('./../beerbubbles2.png') repeat 0 0;
+}
 
-#mainsail {
+ #bg2 {
+    z-index:46;
+  background:url('./../beerbubbles3.png') repeat 0 0;
+
+ }
+
+  #bg1 {
+      z-index:42;
+  background:url('./../beerbubbles4.png') repeat 0 0;
+
+  }
+
+body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E8811A', endColorstr='#80320B'); /* for IE */
   background: -webkit-gradient(linear, left top, left bottom, from(#E8811A), to(#80320B)); /* for webkit browsers */
   background: -moz-linear-gradient(top,  #E8811A,  #80320B); /* for firefox 3.6+ */
-  z-index: 45;
+  z-index: 40;
+  height: auto !important; 
+ height:100%
+}
+
+.large-12 {
+
+
 }
