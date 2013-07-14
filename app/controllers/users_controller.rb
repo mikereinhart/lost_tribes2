@@ -3,8 +3,16 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = User.new
-
+    @customers = User.order(:name)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @customers.to_csv }
+      format.xls { send_data @customers.to_csv(col_sep: "\t") }
+    end
   end
+
+
+
 
   def create 
     @user = User.new(params[:user])

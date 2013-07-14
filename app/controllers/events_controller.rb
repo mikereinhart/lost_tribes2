@@ -2,16 +2,17 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+
   end
   
-#   def index
-#   @events = Event.order(:title)
-#   respond_to do |format|
-#     format.html
-#     format.csv { send_data @events.to_csv }
-#     format.xls { send_data @events.to_csv(col_sep: "\t") }
-#   end
-# end
+  def index
+  @events = Event.order(:title)
+  respond_to do |format|
+    format.html
+    format.csv { send_data @events.to_csv }
+    format.xls { send_data @events.to_csv(col_sep: "\t") }
+  end
+end
 
   def create
     # binding.pry

@@ -1,5 +1,4 @@
 New Event Page
-
 = form_for @event, remote: true do |f|
   = f.label :title
   = f.text_field :title
@@ -34,7 +33,8 @@ New Event Page
 %br
 %br
 
-
+=link_to "CSV | ", events_path(format: "csv") 
+=link_to "Excel", events_path(format: "xls") 
 %table#events
   %thead
     %tr
