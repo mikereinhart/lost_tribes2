@@ -61,19 +61,15 @@ h3.tribetitles{
   font-size: 18px;
   width: 78%;
   font-family: 'Old Standard TT', serif;
-   /*background-color: rgb(242, 225, 179);*/
    padding: 25px;
   background: url(./../tiny.png);
+  border: 1px solid #605858;
 }
+
 #topgraph {
   color: #605858;
   z-index: 53;
-}
-
-.backgroundsmaller {
-   opacity: 0.4;
-  background-color: rgba(242, 225, 179, 0.5);
-
+  line-height: 1.2em;
 }
 
 #darker{
