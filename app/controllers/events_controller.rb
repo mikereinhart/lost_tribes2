@@ -59,7 +59,7 @@ end
     # binding.pry
     event = Event.find(params[:id])
     current_user.register(event) unless event.in?(current_user.events)
-    # redirect?
+    redirect_to user_path(current_user)
   end
 
 end 
