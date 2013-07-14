@@ -30,7 +30,9 @@
         = f.submit id: 'submit'
         = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
         = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
+
     / ===================================================================
+    
     - if current_user && !current_user.vendor?
       %h3 Click an event title to view details and register!
       .event-display
@@ -59,9 +61,9 @@
           %th 
             Zip Code
           %th
-            Details:
+            Details
           %th
-            Options:
+            Options
       %tbody
         - @events.each do |event|
           %tr{:'data-event-id' => event.id}
