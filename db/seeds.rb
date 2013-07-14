@@ -6,14 +6,14 @@ e2 = Event.create(title: 'Reinhart-fest', date: '2010-10-10 16:19:00 UTC', stree
 e3 = Event.create(title: 'Beerfest', date: '2010-10-10 16:19:00 UTC', street_address: '345 Main St', city: 'New York', state: 'NY', zip_code: '11206', description: 'Placeholding description!', street_address2: 'Apt b')
 
 
-u1 = User.create(name: "mike", email: "mreinhart88@yahoo.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
-u2 = User.create(name: "Jim", email: "mreinhart88@gmail.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
-u3 = User.create(vendor: true, name: "vendor 1", email: "chris@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
-u4 = User.create(admin: true, name: "admin 1", email: "ryan@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
-u5 = User.create(name: "admin 2", email: "john@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A', admin: true)
+# u1 = User.create(name: "mike", email: "mreinhart88@yahoo.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
+# u2 = User.create(name: "Jim", email: "mreinhart88@gmail.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
+u3 = User.create(vendor: true, name: "vendor", email: "chris@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
+u4 = User.create(admin: true, name: "customer", email: "ryan@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A')
+u5 = User.create(name: "admin", email: "john@email.com", zip: 44122, password: 'password', phone_number: '777-777-7777', street_address: '123 Main St', city: 'New York', state: 'NY', street_address_2: 'Apt A', admin: true)
 
 
 
-u1.events << e1 << e2
-u1.created_events << e3
+u3.events << e1 << e2
+u3.created_events << e3
 
