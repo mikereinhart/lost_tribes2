@@ -101,7 +101,7 @@ corresponding_row.children('.event_description').text(params.event.description);
 
 
 function display_event(e){
-  console.log('made it into display_event');
+  // console.log('made it into display_event');
   e.preventDefault();
 
   $('.event-display').empty();
@@ -118,6 +118,10 @@ function display_event(e){
   var state = $.trim(event_row.find('.event_state').text());
   var zip = $.trim(event_row.find('.event_zip').text());
   var description = $.trim(event_row.find('.event_description').text());
+
+  // $('#add-to-user').attr('data-event-id', event_id);
+  $($('#add-to-user').children()[0]).attr('href', event_id+"/register");
+  // $($('#add-to-user').children()[0]).attr('data', current_user);
 
   $('<h3>').text(title).appendTo('.event-display');
   $('<h5>').text(date).appendTo('.event-display');
@@ -139,7 +143,6 @@ function display_event(e){
   // button.setAttribute('name', '');
   // button.attachEvent('onClick', function());
   // button.appendTo('.event-display');
-
 }
 
 // =========================================================
@@ -149,4 +152,5 @@ $(function(){
   $('tbody').on('click', '.event-edit', populate_form);
   $('#event-update-submit').on('click', update_event);
   $('.event_title').on('click', display_event);
+  // $('#add-to-user').on('click', )
 });

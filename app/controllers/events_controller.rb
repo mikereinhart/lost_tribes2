@@ -55,6 +55,13 @@ end
     render json: event
   end
 
+  def register
+    # binding.pry
+    event = Event.find(params[:id])
+    current_user.register(event) unless event.in?(current_user.events)
+    # redirect?
+  end
+
 end 
 
 
