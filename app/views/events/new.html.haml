@@ -1,5 +1,5 @@
 .row
-  .large-12.columns
+  .large-4.columns
     %h1 Events
     - if current_user && (current_user.vendor? || current_user.admin?)
       = form_for @event, remote: true do |f|
@@ -12,7 +12,7 @@
         = f.label :street_address
         = f.text_field :street_address
         %br
-        = f.label :street_address2
+        = f.label :street_address_2
         = f.text_field :street_address2
         %br
         = f.label :city
@@ -30,14 +30,20 @@
         = f.submit id: 'submit'
         = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
         = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
+        %br
+        %br
 
     / ===================================================================
-    
+  .large-8.columns
     - if current_user && !current_user.vendor?
-      %h3 Click an event title to view details and register!
+      %br
+      %br
+      %br
       .event-display
       %button.hidden.small#add-to-user 
         =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
+    %br
+    %br
     %br
     %br
     %br
