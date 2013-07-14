@@ -105,6 +105,7 @@ function display_event(e){
   e.preventDefault();
 
   $('.event-display').empty();
+  $('#add-to-user').removeClass('hidden');
 
   var event_row = $(this).parent();
   var event_id = event_row.attr('data-event-id');
@@ -134,12 +135,12 @@ function display_event(e){
   
 
 
-  var button = document.createElement('input');
-  button.setAttribute('type', 'button');
-  button.setAttribute('value', 'Register to Attend');
-  button.setAttribute('name', '');
-  button.attachEvent('onClick', function());
-  button.appendTo('.event-display');
+  // var button = document.createElement('input');
+  // button.setAttribute('type', 'button');
+  // button.setAttribute('value', 'Register to Attend');
+  // button.setAttribute('name', '');
+  // button.attachEvent('onClick', function());
+  // button.appendTo('.event-display');
 
 }
 
