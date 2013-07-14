@@ -42,6 +42,12 @@ function populate_form(e){
   var zip = $.trim(event_row.find('.event_zip').text());
   var description = $.trim(event_row.find('.event_description').text());
 
+
+  if (parseInt() < 1 ) {
+    alert("Error: street Address is a required field.")
+  }
+
+
   $('#event_title').val(title);
   $('#event_date').val(date);
   $('#event_street_address').val(street);
@@ -127,6 +133,7 @@ function display_event(e){
   $('<p>').text(state).appendTo('.event-display');
   $('<p>').text(zip).appendTo('.event-display');
   $('<p>').text(description).appendTo('.event-display');
+
 
   // make a button display when the user shows an events info
   // when clicked, that button performs a PUT request which performs (current_user.events << selected_event)
