@@ -17,6 +17,8 @@
           - if current_user
             %li.active= link_to "My Page", user_path(current_user)
           %li.active
+            %li.active= link_to "Events", new_event_path
+          %li.active
             %a{:href => "#brews"} Brew
           %li.active
             %a{:href => "#vendors"} Vendors

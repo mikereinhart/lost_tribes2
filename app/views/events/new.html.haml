@@ -1,7 +1,7 @@
 .row
   .large-12.columns
     %h1 Events
-    - if current_user && current_user.vendor?
+    - if current_user && (current_user.vendor? || current_user.admin?)
       = form_for @event, remote: true do |f|
         = f.label :title
         = f.text_field :title
