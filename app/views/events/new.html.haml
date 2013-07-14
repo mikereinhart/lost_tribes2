@@ -47,17 +47,21 @@
           %th
             Title
           %th
-            date
-          %th
-            street
-          %th
-            street 2
-          %th
             Date
-          %th 
+          %th
+            Street
+          %th
+            Address 2
+          %th
             City
           %th 
             State
+          %th 
+            Zip Code
+          %th
+            Details:
+          %th
+            Options:
       %tbody
         - @events.each do |event|
           %tr{:'data-event-id' => event.id}
