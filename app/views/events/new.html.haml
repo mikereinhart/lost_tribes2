@@ -36,7 +36,8 @@
     - if current_user && !current_user.vendor?
       %h3 Click an event title to view details and register!
       .event-display
-      %button.hidden.small#add-to-user Register
+      %button.hidden.small#add-to-user 
+        =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
     %br
     %br
     %br

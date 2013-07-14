@@ -5,14 +5,14 @@ class User < ActiveRecord::Base
 
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, 
-  :zip, :street_address, :street_address2, :city, :state, :phone_number, :vendor, :admin, :street_address_2  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name,
+    :zip, :street_address, :street_address2, :city, :state, :phone_number, :vendor, :admin, :street_address_2  # attr_accessible :title, :body
 
-  validates :zip, presence: true, length: { :is => 5 } 
-  validate :vendor_address # or validate? 
+  validates :zip, presence: true, length: { :is => 5 }
+  validate :vendor_address # or validate?
 
   def vendor_address
     if self.vendor? && self.street_address.nil?
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
     if self.vendor? && self.city.nil?
       self.errors.add(:city, 'City is a required field for vendors.')
-    end 
+    end
 
     if self.vendor? && self.state.nil?
       self.errors.add(:state, 'State is a required field.')
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   has_many :created_events, foreign_key: 'creator_id', class_name: "Event", inverse_of: :creator
 
 
-   def self.to_csv(options = {})
+  def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |customer|
@@ -45,4 +45,22 @@ class User < ActiveRecord::Base
     end
   end
 
+  def register(event)
+    self.events << event
+    self.save
+  end
+  # def forget_events
+  #   self.events = []
+  #   self.save
+  # end
+
+  # def purchased_events(event)
+  #   self.events << event
+  #   self.save
+  # end
+
+  # def created_events(event)
+  #   self.created_events << event
+  #   self.save
+  # end
 end
