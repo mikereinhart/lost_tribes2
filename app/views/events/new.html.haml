@@ -82,7 +82,7 @@
             %td.event_description
               = event.description
             %td
-              - if user_signed_in? &&  
+              - if user_signed_in?
                 = link_to 'Delete', '#', class: 'event-delete'
                 = link_to 'Edit', '#', class: 'event-edit'
 

@@ -1,6 +1,7 @@
 .row
   .large-12.columns
     %h1
+      - if user_signed_in?
       #{@user.name.capitalize}
     %br
     %h2 
