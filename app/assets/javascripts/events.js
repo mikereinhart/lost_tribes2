@@ -59,8 +59,8 @@ function populate_form(e){
 
   //Hide the Create Task button and show the Update Task button
   $('#submit').addClass('hidden');
-  $('#add-submit').removeClass('hidden');
-  $('#add-submit').attr('data-event-id', event_id);
+  $('#event-update-submit').removeClass('hidden');
+  $('#event-update-submit').attr('data-event-id', event_id);
 
   var event_id = event_row.data('event-id');
   $('#event-update-submit').attr('data-event-id', event_id);
