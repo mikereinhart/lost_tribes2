@@ -35,4 +35,14 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :events
   has_many :created_events, foreign_key: 'creator_id', class_name: "Event", inverse_of: :creator
 
+
+   def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |customer|
+        csv << customer.attributes.values_at(*column_names)
+      end
+    end
+  end
+
 end

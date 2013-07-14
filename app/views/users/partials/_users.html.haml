@@ -2,6 +2,10 @@
 =link_to 'admin', '#', class: 'small button filter_admin'
 =link_to 'Customers', '#', class: 'small button filter_user'
 =link_to 'All', '#', class: 'small button filter_all'
+
+=link_to "CSV | ", users_path(format: "csv") 
+=link_to "Excel", users_path(format: "xls") 
+
 - @users.each do |user| 
   - if user.admin?
     %tr{:'data-user-id' => user.id, class: 'admin_row highlighted'}
