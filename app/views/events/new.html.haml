@@ -30,6 +30,14 @@
     = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
     = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
 
+/ ===================================================================
+
+- if current_user && !current_user.vendor?
+  .event-display
+    / = render partial: 'events/partials/event'
+    / = link_to "Selected Event", 'events/#{}', remote: true
+
+
 %br
 %br
 %br
