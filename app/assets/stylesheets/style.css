@@ -34,7 +34,11 @@ i:hover {
 
 .tribetitles {
   font-family: 'Old Standard TT', serif;
-   color: white;
+   color: black;
+}
+
+#titlebanner {
+  font-size: 69px;
 }
 
 h3.tribetitles{
@@ -45,6 +49,14 @@ h3.tribetitles{
 
 #smallerlt {
   font-size: 18px;
+}
+
+#darker{
+  float: left;
+}
+
+#lighter {
+  float: right;
 }
 
 h1 {
@@ -104,9 +116,9 @@ display: inline;
   }
 
 body {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E8811A', endColorstr='#80320B'); /* for IE */
-  background: -webkit-gradient(linear, left top, left bottom, from(#E8811A), to(#80320B)); /* for webkit browsers */
-  background: -moz-linear-gradient(top,  #E8811A,  #80320B); /* for firefox 3.6+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgb(243, 141, 0)', endColorstr='rgb(200, 99, 0)'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(243, 141, 0)), to(rgb(200, 99, 0))); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  rgb(243, 141, 0),  rgb(200, 99, 0)); /* for firefox 3.6+ */
   z-index: 40;
   height: auto !important; 
  height:100%
