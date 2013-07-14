@@ -1,6 +1,6 @@
 - if current_user.admin?
   .row
-    .large-12.columns
+    .large-3.columns
       = form_for @user do |f|
         = f.label :name
         = f.text_field :name
@@ -27,12 +27,13 @@
         = f.submit id: 'submit', class: 'button success small'
         = f.submit id: 'update-submit', class: 'button success small hidden', value: 'Update User'
 
+    .large-9.columns
       %table
         %thead
           %tr
             %th Name
             %th Email
-            %th Password
+            %th.hidden Password
             %th Phone Number
             %th Street Address
             %th Street Address 2
