@@ -37,9 +37,9 @@ function populate_form(e){
   var street = $.trim(event_row.find('.event_street_address').text());
   var street2 = $.trim(event_row.find('.event_street_address_2').text());
   var city = $.trim(event_row.find('.event_city').text());
-  var state = $.trim(event_row.find('.event_state').text()); 
-  var zip = $.trim(event_row.find('.event_zip').text()); 
-  var description = $.trim(event_row.find('.event_description').text()); 
+  var state = $.trim(event_row.find('.event_state').text());
+  var zip = $.trim(event_row.find('.event_zip').text());
+  var description = $.trim(event_row.find('.event_description').text());
 
   // var priority_id = $.trim(event_row.find('.priority-id').text());
 
@@ -84,7 +84,7 @@ function update_event(e) {
       description: $('#event_description').val()
     }
   };
-  
+
 
 $.ajax({
   type: 'PUT',
@@ -105,17 +105,52 @@ corresponding_row.children('.event_city').text(params.event.city);
 corresponding_row.children('.event_state').text(params.event.state);
 corresponding_row.children('.event_zip').text(params.event.zip);
 corresponding_row.children('.event_description').text(params.event.description);
+}
+
+function display_event(e){
+  console.log('made it into display_event');
+  e.preventDefault();
+
+  $('.event-display').empty();
+
+  var event_row = $(this).parent();
+  var event_id = event_row.attr('data-event-id');
+
+  var title = $.trim(event_row.find('.event_title').text());
+  var date = $.trim(event_row.find('.event_date').text());
+  var street = $.trim(event_row.find('.event_street_address').text());
+  var street2 = $.trim(event_row.find('.event_street_address_2').text());
+  var city = $.trim(event_row.find('.event_city').text());
+  var state = $.trim(event_row.find('.event_state').text());
+  var zip = $.trim(event_row.find('.event_zip').text());
+  var description = $.trim(event_row.find('.event_description').text());
 
 
+  var title_row = $('<h3>').text(title);
+  var date_row = $('<h5>').text(date);
+  var street_row = $('<p>').text(state);
+  var street2_row = $('<p>').text(street2);
+  var city_row = $('<p>').text(city);
+  var state_row = $('<p>').text(state);
+  var zip_row = $('<p>').text(zip);
+  var desc_row = $('<p>').text(description);
+
+  title_row.appendTo('.event-display');
+  date_row.appendTo('.event-display');
+  street_row.appendTo('.event-display');
+  street2_row.appendTo('.event-display');
+  city_row.appendTo('.event-display');
+  state_row.appendTo('.event-display');
+  zip_row.appendTo('.event-display');
+  desc_row.appendTo('.event-display');
+}
 
 
-
-} 
 
 $(function(){
   $('tbody').on('click', '.event-delete', delete_event);
   $('tbody').on('click', '.event-edit', populate_form);
   $('#event-update-submit').on('click', update_event);
-  // $('#submit').on('click', create_event);
+  $('.event_title').on('click', display_event);
 
 });
