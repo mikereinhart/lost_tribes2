@@ -22,6 +22,7 @@ function delete_event(e){
 }
 
 
+
 function populate_form(e){
   console.log('entered populate form function');
   e.preventDefault();
@@ -31,7 +32,7 @@ function populate_form(e){
   var event_row = $(this).parent().parent();
   var event_id = event_row.attr('data-event-id');
 
-  //gets and stores each of the row's text values, including the hidden priority id, also trimming their whitespace
+  //gets and stores each of the row's text values, also trimming their whitespace
   var title = $.trim(event_row.find('.event_title').text());
   var date = $.trim(event_row.find('.event_date').text());
   var street = $.trim(event_row.find('.event_street_address').text());
@@ -41,9 +42,6 @@ function populate_form(e){
   var zip = $.trim(event_row.find('.event_zip').text());
   var description = $.trim(event_row.find('.event_description').text());
 
-  // var priority_id = $.trim(event_row.find('.priority-id').text());
-
-  //Sets each of the form's fields and selects the correct selection for priority field
   $('#event_title').val(title);
   $('#event_date').val(date);
   $('#event_street_address').val(street);
@@ -52,7 +50,6 @@ function populate_form(e){
   $('#event_state').val(state);
   $('#event_zip_code').val(zip);
   $('#event_description').val(description);
-  // $('#task_priority_id option[value=' + priority_id +']').prop('selected', true);
 
   //Hide the Create Task button and show the Update Task button
   $('#submit').addClass('hidden');
@@ -65,12 +62,9 @@ function populate_form(e){
 }
 
 function update_event(e) {
-  console.log("we are in update event");
   e.preventDefault();
 
   var event_id = $(this).data('event-id');
-  console.log(event_id);
-
 
   var params = {
     event: {
@@ -85,15 +79,12 @@ function update_event(e) {
     }
   };
 
-
 $.ajax({
   type: 'PUT',
   url: '/events/' + event_id,
   data: params,
   dataType: 'script'
 });
-
-
 
 var corresponding_row = $('tr[data-event-id='+event_id+']');
 console.log('corresponding_row '+ corresponding_row);
@@ -106,6 +97,8 @@ corresponding_row.children('.event_state').text(params.event.state);
 corresponding_row.children('.event_zip').text(params.event.zip);
 corresponding_row.children('.event_description').text(params.event.description);
 }
+
+
 
 function display_event(e){
   console.log('made it into display_event');
@@ -125,32 +118,36 @@ function display_event(e){
   var zip = $.trim(event_row.find('.event_zip').text());
   var description = $.trim(event_row.find('.event_description').text());
 
+  $('<h3>').text(title).appendTo('.event-display');
+  $('<h5>').text(date).appendTo('.event-display');
+  $('<p>').text(state).appendTo('.event-display');
+  $('<p>').text(street2).appendTo('.event-display');
+  $('<p>').text(city).appendTo('.event-display');
+  $('<p>').text(state).appendTo('.event-display');
+  $('<p>').text(zip).appendTo('.event-display');
+  $('<p>').text(description).appendTo('.event-display');
 
-  var title_row = $('<h3>').text(title);
-  var date_row = $('<h5>').text(date);
-  var street_row = $('<p>').text(state);
-  var street2_row = $('<p>').text(street2);
-  var city_row = $('<p>').text(city);
-  var state_row = $('<p>').text(state);
-  var zip_row = $('<p>').text(zip);
-  var desc_row = $('<p>').text(description);
+  // make a button display when the user shows an events info
+  // when clicked, that button performs a PUT request which performs (current_user.events << selected_event)
+  // the selected event can be found by its ID
+  // when clicked, the button dissappears and instead a box says '#{event.title} was added to your events!'
+  
 
-  title_row.appendTo('.event-display');
-  date_row.appendTo('.event-display');
-  street_row.appendTo('.event-display');
-  street2_row.appendTo('.event-display');
-  city_row.appendTo('.event-display');
-  state_row.appendTo('.event-display');
-  zip_row.appendTo('.event-display');
-  desc_row.appendTo('.event-display');
+
+  var button = document.createElement('input');
+  button.setAttribute('type', 'button');
+  button.setAttribute('value', 'Register to Attend');
+  button.setAttribute('name', '');
+  button.attachEvent('onClick', function());
+  button.appendTo('.event-display');
+
 }
 
-
+// =========================================================
 
 $(function(){
   $('tbody').on('click', '.event-delete', delete_event);
   $('tbody').on('click', '.event-edit', populate_form);
   $('#event-update-submit').on('click', update_event);
   $('.event_title').on('click', display_event);
-
 });
