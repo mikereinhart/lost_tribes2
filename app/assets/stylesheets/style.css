@@ -62,7 +62,7 @@ h3.tribetitles{
 }
 
 .smallerlt {
-  font-size: 18px;
+  font-size: 21px;
   width: 78%;
   font-family: 'Old Standard TT', serif;
    padding: 25px;
@@ -71,7 +71,7 @@ h3.tribetitles{
 }
 
 #topgraph {
-  color: #605858;
+  color: #4A4747;
   z-index: 53;
   line-height: 1.2em;
 }
@@ -162,6 +162,55 @@ display: inline;
 
   }
 
+
+
+#top1.top-bar{
+  margin-bottom: 0px;
+}
+
+body {
+  background-color: rgb(242, 225, 179);
+}
+
+#navtit {
+  font-family: Tahoma, Verdana, sans-serif;
+ font-weight: lighter;
+ text-decoration: underline;
+}
+
+.icon1 {
+  float: left;
+  background: url(./../tiny3.png);
+  padding: 20px;
+  margin: 20px;
+  margin-left: 95px;
+  font-size: 29px;
+  border: 1px solid black;
+border-radius: 10px;
+    box-shadow: 6px 6px 3px #B45101;
+  margin-bottom: 75px;
+
+}
+
+.icon2 {
+  float: right;
+  background: url(./../tiny3.png);
+    margin: 20px;
+      padding: 20px;
+  margin-right: 107px;
+  font-size: 29px;
+  border-radius: 10px;
+    box-shadow: 6px 6px 3px #B45101;
+  margin-bottom: 75px;
+  border: 1px solid black;
+} 
+
+#foot {
+  clear: both;
+    margin-bottom: 28px;
+  background-color: #C86300;
+}
+
 #mainsail {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgb(253, 174, 48)', endColorstr='rgb(200, 99, 0)'); /* for IE */
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(253, 174, 48)), to(rgb(200, 99, 0))); /* for webkit browsers */
@@ -182,18 +231,4 @@ display: inline;
   margin: auto;
    top: 0;
    left: 0;
-}
-
-#top1.top-bar{
-  margin-bottom: 0px;
-}
-
-body {
-  background-color: rgb(242, 225, 179);
-}
-
-#navtit {
-  font-family: Tahoma, Verdana, sans-serif;
- font-weight: lighter;
- text-decoration: underline;
 }
