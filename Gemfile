@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
 gem 'devise'
+gem 'font-icons-rails', :git=> 'git://github.com/shorelabs/font-icons-rails.git'
 
 gem 'newrelic_rpm'
 
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'binding_of_caller'
   gem 'meta_request'
+
 
 end
 

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/shorelabs/font-icons-rails.git
+  revision: b2b74273bb0db5242f974c13e2d4cab5dad66e84
+  specs:
+    font-icons-rails (0.0.4)
+      sass-rails (>= 3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -234,6 +241,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-rails
+  font-icons-rails!
   foundation-icons-sass-rails
   geocoder
   guard-rspec
