@@ -1,0 +1,22 @@
+%td.user_name
+  = user.name
+%td.user_email
+  = user.email
+%td.user_password.hidden
+  = user.password
+%td.user_phone_number
+  = user.phone_number
+%td.user_street_address
+  = user.street_address
+%td.user_street_address_2
+  = user.street_address_2
+%td.user_city
+  = user.city
+%td.user_state
+  = user.state
+%td.user_zip
+  = user.zip
+%td.edit
+  = link_to 'Delete', '#', class: 'button delete-button small alert' 
+%td.delete
+  = link_to "edit", '#', class: 'button edit-button small'
