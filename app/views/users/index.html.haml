@@ -1,5 +1,7 @@
 - if current_user.admin?
   .row
+    .large-12.columns
+      %h1 Users
     .large-3.columns
       = form_for @user do |f|
         = f.label :name

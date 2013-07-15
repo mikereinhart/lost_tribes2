@@ -1,12 +1,12 @@
-%h3 Sort
-=link_to 'vendors', '#', class: 'small button filter_vendor'
-=link_to 'admin', '#', class: 'small button filter_admin'
-=link_to 'Customers', '#', class: 'small button filter_user'
-=link_to 'All', '#', class: 'small button filter_all'
-%br
-%br
-=link_to "CSV | ", users_path(format: "csv") 
-=link_to "Excel", users_path(format: "xls") 
+%h5 
+  Sort:
+  =link_to 'vendors', '#', class: 'small button filter_vendor'
+  =link_to 'admin', '#', class: 'small button filter_admin'
+  =link_to 'Customers', '#', class: 'small button filter_user'
+  =link_to 'All', '#', class: 'small button filter_all' 
+  Download To:
+  =link_to "CSV", users_path(format: "csv"), class: 'small button'
+  =link_to "Excel", users_path(format: "xls"), class: 'small button'
 
 - @users.each do |user| 
   %tr{:'data-user-id' => user.id, class: 'admin_row highlighted'}
