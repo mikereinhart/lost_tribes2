@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: lost_tribes2_dev
   pool: 5
-  username: chriseichler
+  username: michaelreinhart
   host: localhost
   password:
 
@@ -13,6 +13,6 @@ test:
   encoding: unicode
   database: lost_tribes2_dev
   pool: 5
-  username: chriseichler
+  username: michaelreinhart
   host: localhost
   password:

@@ -3,29 +3,21 @@
   - if current_user && (current_user.vendor? || current_user.admin?)
     .large-4.columns
       = form_for @event, remote: true do |f|
-        = f.label :title
-        = f.text_field :title
+        = f.text_field :title, placeholder: 'Title'
         %br
-        = f.label :date
-        = f.text_field :date
+        = f.text_field :date, placeholder: 'YYYY-MM-DD HH:MM:SS EST'
         %br
-        = f.label :street_address
-        = f.text_field :street_address
+        = f.text_field :street_address, placeholder: 'Address'
         %br
-        = f.label :street_address_2
-        = f.text_field :street_address2
+        = f.text_field :street_address2, placeholder: 'Address 2'
         %br
-        = f.label :city
-        = f.text_field :city
+        = f.text_field :city, placeholder: 'City'
         %br
-        = f.label :state
-        = f.text_field :state
+        = f.text_field :state, placeholder: 'State'
         %br
-        = f.label :zip_code
-        = f.text_field :zip_code
+        = f.text_field :zip_code, placeholder: 'Zip Code (Must be 5 digits!)'
         %br
-        = f.label :description
-        = f.text_field :description
+        = f.text_field :description, placeholder: 'Description'
         %br
         = f.submit id: 'submit', class: 'button success small'
         = f.submit id: 'event-update-submit', class: 'button success small hidden', value: 'Update Event'

@@ -9,4 +9,5 @@
         - if current_user
           %a{:href => "/users/#{current_user.id}"} My Page
         %a{:href => "/events/new"} Events
-        %a{:href => "/users"} Users
+        - if current_user && admin 
+          %a{:href => "/users"} Users

@@ -1,8 +1,8 @@
 .row
   .large-12.columns
-    %h2
+    %h1
       - if user_signed_in?
-        #{@user.name}
+        Hi, #{@user.name.capitalize}! 
     %br
     %h3 
       Your Events:
