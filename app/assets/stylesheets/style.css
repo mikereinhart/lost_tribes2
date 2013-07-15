@@ -62,7 +62,7 @@ h3.tribetitles{
 }
 
 .smallerlt {
-  font-size: 18px;
+  font-size: 21px;
   width: 78%;
   font-family: 'Old Standard TT', serif;
    padding: 25px;
@@ -71,7 +71,7 @@ h3.tribetitles{
 }
 
 #topgraph {
-  color: #605858;
+  color: #4A4747;
   z-index: 53;
   line-height: 1.2em;
 }
