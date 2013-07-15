@@ -19,8 +19,6 @@ function delete_user(e){
     });
   return $(this); 
 }
-
-
 function populate_form(e){
   console.log("we are in populate form")
   e.preventDefault(); 
@@ -64,24 +62,12 @@ function populate_form(e){
   $('#update-submit').removeClass('hidden');
   $('#submit').addClass('hidden');
 }
-
 function update_user(e){
   e.preventDefault();
   console.log("inside updated user")
 
      
   var user_id = $(this).data('user-id');
-  // same thing as above 
-  //var user_id = $(this).attr('data-user-id');
-    
-  //###########################################################################
-  // also -- why does zip return "edit" and "delete?"
-  //###########################################################################
-
-  //###########################################################################
-  // next step: sort by admin and then sort by vendor. how do you sort by admin? 
-  //###########################################################################
-
 
     console.log("user id "+ user_id)
     console.log("this " + this)
@@ -138,7 +124,6 @@ function update_user(e){
     $('#submit').removeClass('hidden');
   // corresponding_row.children('.user_name').text('Josh')
 }
-
 function filter_vendor(){
   console.log('in filter admin')
   $('.vendor_row').show(1000)
@@ -154,7 +139,6 @@ function filter_user(){
   $('.admin_row').hide(1000)
   $('.vendor_row').hide(1000)
   $('.user_row').show(1000)
-
 }
 function filter_all(){
   $('.admin_row').show(1000)
@@ -162,9 +146,7 @@ function filter_all(){
   $('.user_row').show(1000)
 }
 
-
 $(function(){
-
 $('tbody').on('click', '.delete-button', delete_user); 
 $('tbody').on('click', '.edit-button', populate_form);
 $('#update-submit').on('click', update_user); 
@@ -172,8 +154,5 @@ $('.filter_vendor').on('click', filter_vendor)
 $('.filter_admin').on('click', filter_admin)
 $('.filter_user').on('click', filter_user)
 $('.filter_all').on('click', filter_all)
-
-
-
 });
 
