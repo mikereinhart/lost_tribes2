@@ -62,7 +62,7 @@
               Options
       %tbody
         = render partial: '/events/partials/events'
-    - if current_user && !current_user.vendor?
+    - if current_user
       .event-display
       %button.hidden.small#add-to-user 
         =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
