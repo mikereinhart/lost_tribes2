@@ -6,6 +6,8 @@ gem 'rails', '3.2.13'
 #A terrific gem for turning  https://github.com/alexreisner/geocoder
 gem 'geocoder'
 
+
+
 gem 'nokogiri'
 gem 'pg'
 gem 'jquery-rails'
