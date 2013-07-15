@@ -14,34 +14,38 @@
         / Right Nav Section
         %ul.right
           %li.divider.hide-for-small
+          - unless current_user
+            %li= link_to 'Sign Up', new_user_registration_path
+            %li= link_to 'Login', new_user_session_path, method: :get
           - if current_user && current_user.admin?
             %li.actvive= link_to "Users", users_path
           - if current_user
             %li.active= link_to "My Page", user_path(current_user)
-          %li.active
-            %li.active= link_to "Events", new_event_path
-          %li.active
-            %a{:href => "#brews"} Brew
-          %li.active
-            %a{:href => "#vendors"} Vendors
+          %li.active= link_to "Events", new_event_path
+          - if current_user
+            %li.active= link_to "Log Out", destroy_user_session_path, method: :delete
+          / %li.active
+          /   %a{:href => "#brews"} Brew
+          / %li.active
+          /   %a{:href => "#vendors"} Vendors
           %li.has-dropdown
             %a{:href => "#"}
               %i.icon-cogs
             %ul.dropdown
               %li
                 %label Customers & Vendors
-              %li.has-dropdown
-                %a{:href => "#brews"}
-                  Our Brew
-                  %i.icon-beer
-              %li
-                %a{:href => "#vendors"}
-                  Vendors Map
-                  %i.icon-map-marker
-              %li
-                %a{:href => "#events"}
-                  Events
-                  %i.icon-calendar
+              / %li.has-dropdown
+              /   %a{:href => "#brews"}
+              /     Our Brew
+              /     %i.icon-beer
+              / %li
+              /   %a{:href => "#vendors"}
+              /     Vendors Map
+              /     %i.icon-map-marker
+              / %li
+              /   %a{:href => "#events"}
+              /     Events
+              /     %i.icon-calendar
               %li
                 %a{:href => "mailto:info@LostTribesBrew.com"}
                   Email
