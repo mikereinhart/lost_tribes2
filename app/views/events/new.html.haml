@@ -1,7 +1,7 @@
 .row
-  .large-12.columns
-    %h1 Events
-    - if current_user && (current_user.vendor? || current_user.admin?)
+  %h1 Events
+  - if current_user && (current_user.vendor? || current_user.admin?)
+    .large-4.columns
       = form_for @event, remote: true do |f|
         = f.label :title
         = f.text_field :title
@@ -12,7 +12,7 @@
         = f.label :street_address
         = f.text_field :street_address
         %br
-        = f.label :street_address2
+        = f.label :street_address_2
         = f.text_field :street_address2
         %br
         = f.label :city
@@ -27,19 +27,13 @@
         = f.label :description
         = f.text_field :description
         %br
-        = f.submit id: 'submit'
-        = f.submit id: 'add-submit', class: 'hidden', value: 'Add to My Events'
-        = f.submit id: 'event-update-submit', class: 'button success small', value: 'Update Events'
+        = f.submit id: 'submit', class: 'button success small'
+        = f.submit id: 'event-update-submit', class: 'button success small hidden', value: 'Update Event'
+        %br
+        %br
 
     / ===================================================================
-    
-    - if current_user && !current_user.vendor?
-      %h3 Click an event title to view details and register!
-      .event-display
-      %button.hidden.small#add-to-user Register
-    %br
-    %br
-    %br
+  .large-8.columns
     Download to: 
     =link_to "CSV | ", events_path(format: "csv") 
     =link_to "Excel", events_path(format: "xls") 
@@ -50,43 +44,27 @@
             Title
           %th
             Date
-          %th
+          %th.hidden
             Street
-          %th
+          %th.hidden
             Address 2
           %th
             City
-          %th 
+          %th
             State
-          %th 
+          %th.hidden 
             Zip Code
-          %th
+          %th.hidden
             Details
-          %th
-            Options
+          - if user_signed_in? && current_user.admin?  
+            %th
+              Options
       %tbody
-        - @events.each do |event|
-          %tr{:'data-event-id' => event.id}
-            %td.event_title
-              = link_to event.title, event_path(event)
-            %td.event_date
-              = event.date
-            %td.event_address
-              = event.street_address
-            %td.event_address_2
-              = event.street_address2
-            %td.event_city
-              = event.city
-            %td.event_state
-              = event.state
-            %td.event_zip
-              = event.zip_code
-            %td.event_description
-              = event.description
-            %td
-              - if user_signed_in?
-                = link_to 'Delete', '#', class: 'event-delete'
-                = link_to 'Edit', '#', class: 'event-edit'
+        = render partial: '/events/partials/events'
+    .event-display
+    - if user_signed_in?
+      %button.hidden.small#add-to-user 
+        =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
 
 
     = javascript_include_tag 'events'

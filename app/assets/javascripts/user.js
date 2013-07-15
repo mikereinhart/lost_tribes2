@@ -60,7 +60,9 @@ function populate_form(e){
   $('#user_zip').val(zip);
 
   var user_id = user_row.data('user-id')
-  $('#update-submit').attr('data-user-id', user_id)
+  $('#update-submit').attr('data-user-id', user_id);
+  $('#update-submit').removeClass('hidden');
+  $('#submit').addClass('hidden');
 }
 
 function update_user(e){
@@ -118,8 +120,22 @@ function update_user(e){
   corresponding_row.children('.user_city').text(params.user.city)
   corresponding_row.children('.user_state').text(params.user.state)
   corresponding_row.children('.user_zip').text(params.user.zip)
+
+  $('#user_name').val(''); 
+  $('#user_vendor').val(''); 
+  $('#user_admin').val(''); 
+  $('#user_email').val('');
+  $('#user_password').val(''); 
+  $('#user_phone_number').val(''); 
+  $('#user_street_address').val(''); 
+  $('#user_street_address_2').val('');
+  $('#user_city').val('');
+  $('#user_state').val('');
+  $('#user_zip').val('');
   
   console.log("params.user.name ---> " + params.user.name)
+    $('#update-submit').addClass('hidden');
+    $('#submit').removeClass('hidden');
   // corresponding_row.children('.user_name').text('Josh')
 }
 
@@ -144,9 +160,8 @@ function filter_all(){
   $('.admin_row').show(1000)
   $('.vendor_row').show(1000)
   $('.user_row').show(1000)
-
-
 }
+
 
 $(function(){
 

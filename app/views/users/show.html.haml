@@ -1,10 +1,10 @@
 .row
   .large-12.columns
-    %h1
+    %h2
       - if user_signed_in?
         #{@user.name}
     %br
-    %h2 
+    %h3 
       Your Events:
     %br
       %table#events
@@ -18,6 +18,8 @@
               City
             %th 
               State
+            %th
+              Delete
         %tbody
           - @user.events.each do |event|
             %tr
@@ -29,19 +31,8 @@
                 = event.city
               %td
                 = event.state
-    %h2
-      Your Info:
-    Email: #{@user.email}
-    %br
-    Phone Number: #{@user.phone_number}
-    %br
-    Address: #{@user.street_address}
-    %br
-    Address 2: #{@user.street_address_2}
-    %br
-    City: #{@user.city}
-    %br
-    State: #{@user.state}
-    %br
-    Zip Code: #{@user.zip}
-    %br
+              %td
+                = link_to 'Delete', '#', class: 'event-delete'
+    %h3
+      =link_to 'Edit', edit_user_path(@user)
+      Your Info

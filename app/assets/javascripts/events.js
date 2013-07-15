@@ -35,12 +35,18 @@ function populate_form(e){
   //gets and stores each of the row's text values, also trimming their whitespace
   var title = $.trim(event_row.find('.event_title').text());
   var date = $.trim(event_row.find('.event_date').text());
-  var street = $.trim(event_row.find('.event_street_address').text());
-  var street2 = $.trim(event_row.find('.event_street_address_2').text());
+  var street = $.trim(event_row.find('.event_address').text());
+  var street2 = $.trim(event_row.find('.event_address_2').text());
   var city = $.trim(event_row.find('.event_city').text());
   var state = $.trim(event_row.find('.event_state').text());
   var zip = $.trim(event_row.find('.event_zip').text());
   var description = $.trim(event_row.find('.event_description').text());
+
+
+  if (parseInt() < 1 ) {
+    alert("Error: street Address is a required field.")
+  }
+
 
   $('#event_title').val(title);
   $('#event_date').val(date);
@@ -53,12 +59,9 @@ function populate_form(e){
 
   //Hide the Create Task button and show the Update Task button
   $('#submit').addClass('hidden');
-  $('#add-submit').removeClass('hidden');
-  $('#add-submit').attr('data-event-id', event_id);
-
-  var event_id = event_row.data('event-id');
+  $('#event-update-submit').removeClass('hidden');
   $('#event-update-submit').attr('data-event-id', event_id);
-  console.log("event_id " + event_id);
+
 }
 
 function update_event(e) {
@@ -101,7 +104,7 @@ corresponding_row.children('.event_description').text(params.event.description);
 
 
 function display_event(e){
-  console.log('made it into display_event');
+  // console.log('made it into display_event');
   e.preventDefault();
 
   $('.event-display').empty();
@@ -112,33 +115,22 @@ function display_event(e){
 
   var title = $.trim(event_row.find('.event_title').text());
   var date = $.trim(event_row.find('.event_date').text());
-  var street = $.trim(event_row.find('.event_street_address').text());
-  var street2 = $.trim(event_row.find('.event_street_address_2').text());
+  var street = $.trim(event_row.find('.event_address').text());
+  var street2 = $.trim(event_row.find('.event_address_2').text());
   var city = $.trim(event_row.find('.event_city').text());
   var state = $.trim(event_row.find('.event_state').text());
   var zip = $.trim(event_row.find('.event_zip').text());
   var description = $.trim(event_row.find('.event_description').text());
 
-  $('<h3>').text(title).appendTo('.event-display');
-  $('<h5>').text(date).appendTo('.event-display');
-  $('<p>').text(state).appendTo('.event-display');
-  $('<p>').text(street2).appendTo('.event-display');
-  $('<p>').text(city).appendTo('.event-display');
-  $('<p>').text(state).appendTo('.event-display');
-  $('<p>').text(zip).appendTo('.event-display');
-  $('<p>').text(description).appendTo('.event-display');
+  // $('#add-to-user').attr('data-event-id', event_id);
+  $($('#add-to-user').children()[0]).attr('href', event_id+"/register");
+  // $($('#add-to-user').children()[0]).attr('data', current_user);
 
-  // make a button display when the user shows an events info
-  // when clicked, that button performs a PUT request which performs (current_user.events << selected_event)
-  // the selected event can be found by its ID
-  // when clicked, the button dissappears and instead a box says '#{event.title} was added to your events!'
-
-  // var button = document.createElement('input');
-  // button.setAttribute('type', 'button');
-  // button.setAttribute('value', 'Register to Attend');
-  // button.setAttribute('name', '');
-  // button.attachEvent('onClick', function());
-  // button.appendTo('.event-display');
+  $('<h2>').text(title).appendTo('.event-display');
+  $('<p>').text("When: "+date).appendTo('.event-display');
+  $('<p>').text(street+ " " + street2).appendTo('.event-display');
+  $('<p>').text(city+ ", " + state+ " "+ zip).appendTo('.event-display');
+  $('<p>').text("Details: "+description).appendTo('.event-display');
 
 }
 
@@ -149,4 +141,5 @@ $(function(){
   $('tbody').on('click', '.event-edit', populate_form);
   $('#event-update-submit').on('click', update_event);
   $('.event_title').on('click', display_event);
+  // $('#add-to-user').on('click', )
 });

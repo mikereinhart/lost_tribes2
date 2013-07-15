@@ -1,83 +1,34 @@
-=link_to 'vendors', '#', class: 'small button filter_vendor'
-=link_to 'admin', '#', class: 'small button filter_admin'
-=link_to 'Customers', '#', class: 'small button filter_user'
-=link_to 'All', '#', class: 'small button filter_all'
-
-=link_to "CSV | ", users_path(format: "csv") 
-=link_to "Excel", users_path(format: "xls") 
+%h5 
+  Sort:
+  =link_to 'vendors', '#', class: 'small button filter_vendor'
+  =link_to 'admin', '#', class: 'small button filter_admin'
+  =link_to 'Customers', '#', class: 'small button filter_user'
+  =link_to 'All', '#', class: 'small button filter_all' 
+  Download To:
+  =link_to "CSV", users_path(format: "csv"), class: 'small button'
+  =link_to "Excel", users_path(format: "xls"), class: 'small button'
 
 - @users.each do |user| 
-  - if user.admin?
-    %tr{:'data-user-id' => user.id, class: 'admin_row highlighted'}
-      %td.user_name
-        = user.name
-      %td.user_email
-        = user.email
-      %td.user_password
-        = user.password
-      %td.user_phone_number
-        = user.phone_number
-      %td.user_street_address
-        = user.street_address
-      %td.user_street_address_2
-        = user.street_address_2
-      %td.user_city
-        = user.city
-      %td.user_state
-        = user.state
-      %td.user_zip
-        = user.zip
-      %td.edit
-        = link_to 'Delete', '#', class: 'button delete-button small alert' 
-      %td.delete
-        = link_to 'Edit', '#', class: 'button edit-button small'
-  - elsif user.vendor?
-    %tr{:'data-user-id' => user.id, class: 'vendor_row highlighted'}
-      %td.user_name
-        = user.name
-      %td.user_email
-        = user.email
-      %td.user_password
-        = user.password
-      %td.user_phone_number
-        = user.phone_number
-      %td.user_street_address
-        = user.street_address
-      %td.user_street_address_2
-        = user.street_address_2
-      %td.user_city
-        = user.city
-      %td.user_state
-        = user.state
-      %td.user_zip
-        = user.zip
-      %td.edit
-        = link_to 'Delete', '#', class: 'button delete-button small alert' 
-      %td.delete
-        = link_to 'Edit', '#', class: 'button edit-button small'
-  - else 
-    %tr{:'data-user-id' => user.id, class: 'user_row'}
-      %td.user_name
-        = user.name
-      %td.user_email
-        = user.email
-      %td.user_password
-        = user.password
-      %td.user_phone_number
-        = user.phone_number
-      %td.user_street_address
-        = user.street_address
-      %td.user_street_address_2
-        = user.street_address_2
-      %td.user_city
-        = user.city
-      %td.user_state
-        = user.state
-      %td.user_zip
-        = user.zip
-      %td.edit
-        = link_to 'Delete', '#', class: 'button delete-button small alert' 
-      %td.delete
-        = link_to 'Edit', '#', class: 'button edit-button small'
-
-
+  %tr{:'data-user-id' => user.id, class: 'admin_row highlighted'}
+    %td.user_name
+      = user.name
+    %td.user_email
+      = user.email
+    %td.user_password.hidden
+      = user.password
+    %td.user_phone_number
+      = user.phone_number
+    %td.user_street_address
+      = user.street_address
+    %td.user_street_address_2
+      = user.street_address_2
+    %td.user_city
+      = user.city
+    %td.user_state
+      = user.state
+    %td.user_zip
+      = user.zip
+    %td.edit
+      = link_to 'Delete', '#', class: 'button delete-button small alert' 
+    %td.delete
+      = link_to 'Edit', '#', class: 'button edit-button small'

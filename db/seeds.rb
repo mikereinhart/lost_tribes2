@@ -14,8 +14,5 @@ u5 = User.create(admin: true, name: "admin", email: "admin@email.com", zip: 4412
 u3.events << e3 << e2
 u3.created_events << e1
 
-u4.events << e1 << e3
-u4.created_events << e2
-
 u5.events << e1 << e2
 u5.created_events << e3
