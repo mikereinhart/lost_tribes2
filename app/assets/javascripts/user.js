@@ -162,7 +162,6 @@ function filter_all(){
   $('.user_row').show(1000)
 }
 
-
 $(function(){
 
 $('tbody').on('click', '.delete-button', delete_user); 
@@ -172,8 +171,6 @@ $('.filter_vendor').on('click', filter_vendor)
 $('.filter_admin').on('click', filter_admin)
 $('.filter_user').on('click', filter_user)
 $('.filter_all').on('click', filter_all)
-
-
 
 });
 
