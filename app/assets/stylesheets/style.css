@@ -197,7 +197,7 @@ border-radius: 10px;
   background: url(./../tiny3.png);
     margin: 20px;
       padding: 20px;
-  margin-right: 95px;
+  margin-right: 107px;
   font-size: 29px;
   border-radius: 10px;
     box-shadow: 6px 6px 3px #B45101;
@@ -208,7 +208,7 @@ border-radius: 10px;
 #foot {
   clear: both;
     margin-bottom: 28px;
-
+  background-color: #C86300;
 }
 
 #mainsail {
