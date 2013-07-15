@@ -29,7 +29,7 @@ div#data-magellan-expedition {
   box-shadow: 10px 10px 5px #888888; 
 }
 
-i { color: white;}
+i { color: black;}
 
 i:hover { 
     color: red;
