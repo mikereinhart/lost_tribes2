@@ -113,6 +113,11 @@ h1 {
     box-shadow: 6px 6px 3px #C75200;
 }
 
+.beertitle {
+  font-family: Garamond, serif;
+  font-size: 28px;
+}
+
 .button {
   background-color: hsl(0, 69%, 22%) !important;
   background-repeat: repeat-x;
