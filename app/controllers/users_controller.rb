@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(params[:user])
     if @user.save
-       redirect_to users_path
+        UserMailer.signup_confirmation(@user).deliver
+        redirect_to @user, notice: "Signed up successfully."
     else
       render :new
     end
