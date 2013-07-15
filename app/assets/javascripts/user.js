@@ -80,7 +80,7 @@ function update_user(e){
       admin: $('#user_admin').val(),
       email: $('#user_email').val(),
       phone: $('#user_phone').val(),
-      street_address: $('#user_street_address').val(), 
+      street_address: $('#user_street_address').val(),
       street_address_2: $('#user_street_address_2').val(),
       city: $('#user_city').val(),
       state: $('#user_state').val(),
