@@ -15,7 +15,7 @@ margin-top: 0px;
 }
 
 #sliders{
-  height: 600px;
+  /*height: 600px;*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -38,6 +38,10 @@ i:hover {
 .specialbeers {
  font-family: 'Old Standard TT', serif;
    color: black;
+}
+
+#tejpic {
+  clear: both;
 }
 
 .tribetitles {
@@ -63,7 +67,7 @@ h3.tribetitles{
   font-family: 'Old Standard TT', serif;
    padding: 25px;
   background: url(./../tiny.png);
-  border: 1px solid #605858;
+  border: 1px solid #FAD637;
 }
 
 #topgraph {
@@ -72,12 +76,16 @@ h3.tribetitles{
   line-height: 1.2em;
 }
 
-#darker{
+.darker{
   float: left;
 }
 
-#lighter {
+.lighter {
   float: right;
+}
+
+.tejpic {
+  float: left;
 }
 
 h1 {
@@ -87,9 +95,22 @@ h1 {
   margin-top: 25px;
 }
 
-p {
+.specialbeers {
   font-family: georgia; 
   font-size: 22px;
+}
+
+.bfeatures {
+  border: 1px solid black;
+    clear: both;
+    background: url(./../tiny.png);
+    padding: 18px;
+    font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+    box-shadow: 6px 6px 3px #C96401;
+}
+
+#tejdiv {
+    box-shadow: 6px 6px 3px #C75200;
 }
 
 .button {
@@ -137,9 +158,9 @@ display: inline;
   }
 
 #mainsail {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgb(243, 141, 0)', endColorstr='rgb(200, 99, 0)'); /* for IE */
-  background: -webkit-gradient(linear, left top, left bottom, from(rgb(243, 141, 0)), to(rgb(200, 99, 0))); /* for webkit browsers */
-  background: -moz-linear-gradient(top,  rgb(243, 141, 0),  rgb(200, 99, 0)); /* for firefox 3.6+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgb(253, 174, 48)', endColorstr='rgb(200, 99, 0)'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(253, 174, 48)), to(rgb(200, 99, 0))); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  rgb(253, 174, 48),  rgb(200, 99, 0)); /* for firefox 3.6+ */
   z-index: 40;
   height: auto !important; 
  height:100%;
