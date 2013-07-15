@@ -28,7 +28,6 @@
         = f.text_field :description
         %br
         = f.submit id: 'submit', class: 'button success small'
-        = f.submit id: 'add-submit', class: 'hidden button success small', value: 'Add to My Events'
         = f.submit id: 'event-update-submit', class: 'button success small hidden', value: 'Update Event'
         %br
         %br
@@ -62,8 +61,8 @@
               Options
       %tbody
         = render partial: '/events/partials/events'
-    - if current_user
-      .event-display
+    .event-display
+    - if user_signed_in?
       %button.hidden.small#add-to-user 
         =link_to("Register", register_event_path("#{'data-event-id'}"), method: :post, data: current_user)
 

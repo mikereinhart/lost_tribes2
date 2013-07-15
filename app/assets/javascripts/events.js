@@ -62,9 +62,6 @@ function populate_form(e){
   $('#event-update-submit').removeClass('hidden');
   $('#event-update-submit').attr('data-event-id', event_id);
 
-  var event_id = event_row.data('event-id');
-  $('#event-update-submit').attr('data-event-id', event_id);
-  console.log("event_id " + event_id);
 }
 
 function update_event(e) {
