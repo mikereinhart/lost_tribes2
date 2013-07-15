@@ -34,7 +34,9 @@
               %td
                 = link_to 'Delete', '#', class: 'event-delete'
     %h3
-      Your Info:
+      Your Info: 
+      =link_to 'Edit', edit_user_path(@user)
+    Name: #{@user.name}
     %br
     Email: #{@user.email}
     %br

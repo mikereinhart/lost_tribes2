@@ -160,9 +160,8 @@ function filter_all(){
   $('.admin_row').show(1000)
   $('.vendor_row').show(1000)
   $('.user_row').show(1000)
-
-
 }
+
 
 $(function(){
 
