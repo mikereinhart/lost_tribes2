@@ -1,7 +1,7 @@
 .row
-  .large-4.columns
-    %h1 Events
-    - if current_user && (current_user.vendor? || current_user.admin?)
+  %h1 Events
+  - if current_user && (current_user.vendor? || current_user.admin?)
+    .large-4.columns
       = form_for @event, remote: true do |f|
         = f.label :title
         = f.text_field :title
@@ -35,14 +35,6 @@
 
     / ===================================================================
   .large-8.columns
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
     Download to: 
     =link_to "CSV | ", events_path(format: "csv") 
     =link_to "Excel", events_path(format: "xls") 
