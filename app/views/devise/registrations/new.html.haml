@@ -4,46 +4,39 @@
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
       = devise_error_messages!
       %div
-        = f.label :name
         %br/
-        = f.text_field :name, :autofocus => true
+        = f.text_field :name, :autofocus => true, placeholder: "Name"
       %div
-        = f.label :email
         %br/
-        = f.email_field :email
+        = f.email_field :email, placeholder: "Email*"
       %div
-        = f.label :password
         %br/
-        = f.password_field :password
+        = f.password_field :password, placeholder: "Password*"
       %div
-        = f.label :password_confirmation
         %br/
-        = f.password_field :password_confirmation
+        = f.password_field :password_confirmation, placeholder: "Confirm Password*"
       %div
-        = f.label :zip
         %br/
-        = f.text_field :zip
+        = f.text_field :zip, placeholder: "Zip Code*"
       %div
-        = f.label :street_address
         %br/
-        = f.text_field :street_address
+        = f.text_field :street_address, placeholder: "Address"
       %div
-        = f.label :street_address_2
         %br/
-        = f.text_field :street_address_2 
+        = f.text_field :street_address_2, placeholder: "Address 2"
       %div
-        = f.label :city
         %br/
-        = f.text_field :city 
+        = f.text_field :city, placeholder: "City"
       %div
-        = f.label :state
         %br/
-        = f.text_field :state 
+        = f.text_field :state, placeholder: "State"
       %div
-        = f.label :phone_number
         %br/
-        = f.text_field :phone_number
+        = f.text_field :phone_number, placeholder: "Phone Number"
       %div
+        * denotes required fields
+        %br
+        %br
       %h6
         Check box if new or exisiting Lost Tribe's vendor 
         = f.check_box :vendor
