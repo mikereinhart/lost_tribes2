@@ -35,8 +35,8 @@ function populate_form(e){
   //gets and stores each of the row's text values, also trimming their whitespace
   var title = $.trim(event_row.find('.event_title').text());
   var date = $.trim(event_row.find('.event_date').text());
-  var street = $.trim(event_row.find('.event_street_address').text());
-  var street2 = $.trim(event_row.find('.event_street_address_2').text());
+  var street = $.trim(event_row.find('.event_address').text());
+  var street2 = $.trim(event_row.find('.event_address_2').text());
   var city = $.trim(event_row.find('.event_city').text());
   var state = $.trim(event_row.find('.event_state').text());
   var zip = $.trim(event_row.find('.event_zip').text());
@@ -118,8 +118,8 @@ function display_event(e){
 
   var title = $.trim(event_row.find('.event_title').text());
   var date = $.trim(event_row.find('.event_date').text());
-  var street = $.trim(event_row.find('.event_street_address').text());
-  var street2 = $.trim(event_row.find('.event_street_address_2').text());
+  var street = $.trim(event_row.find('.event_address').text());
+  var street2 = $.trim(event_row.find('.event_address_2').text());
   var city = $.trim(event_row.find('.event_city').text());
   var state = $.trim(event_row.find('.event_state').text());
   var zip = $.trim(event_row.find('.event_zip').text());
@@ -129,27 +129,12 @@ function display_event(e){
   $($('#add-to-user').children()[0]).attr('href', event_id+"/register");
   // $($('#add-to-user').children()[0]).attr('data', current_user);
 
-  $('<h3>').text(title).appendTo('.event-display');
-  $('<h5>').text(date).appendTo('.event-display');
-  $('<p>').text(state).appendTo('.event-display');
-  $('<p>').text(street2).appendTo('.event-display');
-  $('<p>').text(city).appendTo('.event-display');
-  $('<p>').text(state).appendTo('.event-display');
-  $('<p>').text(zip).appendTo('.event-display');
-  $('<p>').text(description).appendTo('.event-display');
+  $('<h2>').text(title).appendTo('.event-display');
+  $('<p>').text("When: "+date).appendTo('.event-display');
+  $('<p>').text(street+ " " + street2).appendTo('.event-display');
+  $('<p>').text(city+ ", " + state+ " "+ zip).appendTo('.event-display');
+  $('<p>').text("Details: "+description).appendTo('.event-display');
 
-
-  // make a button display when the user shows an events info
-  // when clicked, that button performs a PUT request which performs (current_user.events << selected_event)
-  // the selected event can be found by its ID
-  // when clicked, the button dissappears and instead a box says '#{event.title} was added to your events!'
-
-  // var button = document.createElement('input');
-  // button.setAttribute('type', 'button');
-  // button.setAttribute('value', 'Register to Attend');
-  // button.setAttribute('name', '');
-  // button.attachEvent('onClick', function());
-  // button.appendTo('.event-display');
 }
 
 // =========================================================
